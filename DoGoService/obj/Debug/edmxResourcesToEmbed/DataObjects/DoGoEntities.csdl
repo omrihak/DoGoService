@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DogoDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AvailabilityTime">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="StartTime" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="User" Relationship="Self.FK_AvailabilityTimes_ToTable" FromRole="AvailabilityTimes" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Dog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Size" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trip">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="WalkerId" Type="Int32" Nullable="false" />
+    <Property Name="OwnerId" Type="Int32" />
+    <Property Name="StartTime" Type="Time" Precision="7" />
+    <Property Name="EndTime" Type="Time" Precision="7" />
+    <Property Name="Paid" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Trips_ToUsers" FromRole="Trips" ToRole="Users" />
+    <NavigationProperty Name="Walker" Relationship="Self.FK_Trips_ToWalkers" FromRole="Trips" ToRole="Walkers" />
+  </EntityType>
+  <EntityType Name="UserRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RequestingUserId" Type="Int32" />
+    <Property Name="RequestedUserId" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserRequests_Users1" FromRole="UserRequests" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_UserRequests_Users2" FromRole="UserRequests" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsWalker" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AvailabilityTimes" Relationship="Self.FK_AvailabilityTimes_ToTable" FromRole="Users" ToRole="AvailabilityTimes" />
+    <NavigationProperty Name="Dogs" Relationship="Self.FK_Dogs_ToTable" FromRole="Users" ToRole="Dogs" />
+    <NavigationProperty Name="Trips" Relationship="Self.FK_Trips_ToUsers" FromRole="Users" ToRole="Trips" />
+    <NavigationProperty Name="UserRequests" Relationship="Self.FK_UserRequests_Users1" FromRole="Users" ToRole="UserRequests" />
+    <NavigationProperty Name="UserRequests1" Relationship="Self.FK_UserRequests_Users2" FromRole="Users" ToRole="UserRequests" />
+    <NavigationProperty Name="Walker" Relationship="Self.FK_Walkers_ToUsers" FromRole="Users" ToRole="Walkers" />
+  </EntityType>
+  <EntityType Name="Walker">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="HourlyFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Trips" Relationship="Self.FK_Trips_ToWalkers" FromRole="Walkers" ToRole="Trips" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Walkers_ToUsers" FromRole="Walkers" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_AvailabilityTimes_ToTable">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="AvailabilityTimes" Type="Self.AvailabilityTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AvailabilityTimes">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dogs_ToTable">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Dogs" Type="Self.Dog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dogs">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_ToUsers">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_ToWalkers">
+    <End Role="Walkers" Type="Self.Walker" Multiplicity="1" />
+    <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Walkers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="WalkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRequests_Users1">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="UserRequests" Type="Self.UserRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRequests">
+        <PropertyRef Name="RequestingUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRequests_Users2">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="UserRequests" Type="Self.UserRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRequests">
+        <PropertyRef Name="RequestedUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Walkers_ToUsers">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Walkers" Type="Self.Walker" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Walkers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DogoDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AvailabilityTimes" EntityType="Self.AvailabilityTime" />
+    <EntitySet Name="Dogs" EntityType="Self.Dog" />
+    <EntitySet Name="Trips" EntityType="Self.Trip" />
+    <EntitySet Name="UserRequests" EntityType="Self.UserRequest" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Walkers" EntityType="Self.Walker" />
+    <AssociationSet Name="FK_AvailabilityTimes_ToTable" Association="Self.FK_AvailabilityTimes_ToTable">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AvailabilityTimes" EntitySet="AvailabilityTimes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dogs_ToTable" Association="Self.FK_Dogs_ToTable">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Dogs" EntitySet="Dogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_ToUsers" Association="Self.FK_Trips_ToUsers">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_ToWalkers" Association="Self.FK_Trips_ToWalkers">
+      <End Role="Walkers" EntitySet="Walkers" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRequests_Users1" Association="Self.FK_UserRequests_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRequests" EntitySet="UserRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRequests_Users2" Association="Self.FK_UserRequests_Users2">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRequests" EntitySet="UserRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Walkers_ToUsers" Association="Self.FK_Walkers_ToUsers">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Walkers" EntitySet="Walkers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

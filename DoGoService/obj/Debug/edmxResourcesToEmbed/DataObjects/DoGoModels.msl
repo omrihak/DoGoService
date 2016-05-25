@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DoGoModelsStoreContainer" CdmEntityContainer="DoGoEntities">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DoGoModels.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="isDogWalker" ColumnName="isDogWalker" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dogs">
+      <EntityTypeMapping TypeName="DoGoModels.Dog">
+        <MappingFragment StoreEntitySet="Dogs">
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DogWalkers">
+      <EntityTypeMapping TypeName="DoGoModels.DogWalker">
+        <MappingFragment StoreEntitySet="DogWalkers">
+          <ScalarProperty Name="workInEvening" ColumnName="workInEvening" />
+          <ScalarProperty Name="workInAfternoon" ColumnName="workInAfternoon" />
+          <ScalarProperty Name="workInMorning" ColumnName="workInMorning" />
+          <ScalarProperty Name="priceForHour" ColumnName="priceForHour" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trips">
+      <EntityTypeMapping TypeName="DoGoModels.Trip">
+        <MappingFragment StoreEntitySet="Trips">
+          <ScalarProperty Name="isPaid" ColumnName="isPaid" />
+          <ScalarProperty Name="dogOwnerId" ColumnName="dogOwnerId" />
+          <ScalarProperty Name="dogWalkerId" ColumnName="dogWalkerId" />
+          <ScalarProperty Name="endOfWalking" ColumnName="endOfWalking" />
+          <ScalarProperty Name="startOfWalking" ColumnName="startOfWalking" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRequests">
+      <EntityTypeMapping TypeName="DoGoModels.UserRequest">
+        <MappingFragment StoreEntitySet="UserRequests">
+          <ScalarProperty Name="isOwnerAskedWalker" ColumnName="isOwnerAskedWalker" />
+          <ScalarProperty Name="requestStatus" ColumnName="requestStatus" />
+          <ScalarProperty Name="requestedUser" ColumnName="requestedUser" />
+          <ScalarProperty Name="requestingUserId" ColumnName="requestingUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,556 @@
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\AutoMapper.Net4.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ApplicationInsights.config
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\DoGoService.dll.config
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\DoGoService.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\DoGoService.pdb
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Autofac.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\AutoMapper.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\EntityFramework.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\EntityFramework.SqlServer.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.Web.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.WindowsServer.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.ApplicationInsights.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Data.Edm.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Data.OData.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.ActiveDirectory.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Google.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Jwt.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.ServiceBus.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Configuration.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Entity.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Newtonsoft.Json.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Owin.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\RazorEngine.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.IdentityModel.Tokens.Jwt.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Net.Http.Formatting.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Spatial.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Cors.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.Cors.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.OData.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.Owin.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.Tracing.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Razor.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Autofac.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\AutoMapper.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\EntityFramework.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\EntityFramework.SqlServer.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.Web.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AI.WindowsServer.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.ApplicationInsights.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Data.Edm.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Data.OData.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.ActiveDirectory.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Google.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Jwt.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.ServiceBus.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Configuration.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Entity.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\Newtonsoft.Json.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\RazorEngine.pdb
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\RazorEngine.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.IdentityModel.Tokens.Jwt.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Net.Http.Formatting.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Spatial.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.Cors.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.OData.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.Owin.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Http.Tracing.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\System.Web.Razor.xml
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\de\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\es\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\fr\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\it\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ja\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ko\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ru\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\de\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\es\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\fr\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\it\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ja\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ko\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ru\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\es\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\fr\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\it\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\es\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\fr\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\it\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\de\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\es\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\fr\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\it\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ja\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ko\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\ru\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hans\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\bin\zh-Hant\System.Spatial.resources.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\obj\Debug\DoGoService.csprojResolveAssemblyReference.cache
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\obj\Debug\DoGoService.dll
+c:\users\michaelk\documents\visual studio 2015\Projects\DoGoService\DoGoService\obj\Debug\DoGoService.pdb
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\AutoMapper.Net4.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ApplicationInsights.config
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\DoGoService.dll.config
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\DoGoService.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\DoGoService.pdb
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Autofac.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\AutoMapper.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\EntityFramework.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\EntityFramework.SqlServer.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.Web.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.ApplicationInsights.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Data.Edm.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Data.OData.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.ActiveDirectory.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Jwt.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.ServiceBus.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Entity.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Newtonsoft.Json.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Owin.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\RazorEngine.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Net.Http.Formatting.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Spatial.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Cors.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.Cors.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.OData.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.Owin.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.Tracing.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Razor.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Autofac.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\AutoMapper.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\EntityFramework.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\EntityFramework.SqlServer.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.Web.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.ApplicationInsights.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Data.Edm.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Data.OData.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.ActiveDirectory.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Jwt.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.ServiceBus.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Entity.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\Newtonsoft.Json.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\RazorEngine.pdb
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\RazorEngine.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Net.Http.Formatting.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Spatial.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.Cors.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.OData.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.Owin.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Http.Tracing.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\System.Web.Razor.xml
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\es\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\fr\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\it\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\es\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\fr\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\it\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\de\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\es\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\fr\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\it\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ja\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ko\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\ru\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\obj\Debug\DoGoService.csprojResolveAssemblyReference.cache
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\obj\Debug\DoGoService.dll
+C:\Users\carmel\Documents\תואר\פרוייקט גמר\DoGoService\DoGoService\obj\Debug\DoGoService.pdb
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ApplicationInsights.config
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\AutoMapper.Net4.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\DoGoService.dll.config
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\DoGoService.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\DoGoService.pdb
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Autofac.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\AutoMapper.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\EntityFramework.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\EntityFramework.SqlServer.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.Web.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.ApplicationInsights.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Data.Edm.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Data.OData.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.ActiveDirectory.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Jwt.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.ServiceBus.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Entity.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Newtonsoft.Json.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Owin.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\RazorEngine.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Net.Http.Formatting.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Spatial.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Cors.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.Cors.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.OData.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.Owin.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.Tracing.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Razor.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Autofac.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\AutoMapper.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\EntityFramework.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\EntityFramework.SqlServer.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.Web.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.ApplicationInsights.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Data.Edm.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Data.OData.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.ActiveDirectory.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Jwt.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.ServiceBus.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Entity.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Newtonsoft.Json.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\RazorEngine.pdb
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\RazorEngine.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Net.Http.Formatting.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Spatial.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.Cors.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.OData.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.Owin.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Http.Tracing.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\System.Web.Razor.xml
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\es\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\fr\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\it\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\es\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\fr\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\it\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\de\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\es\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\fr\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\it\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ja\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ko\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\ru\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\obj\Debug\DoGoService.csprojResolveAssemblyReference.cache
+C:\Users\omrih\Desktop\DoGoService\DoGoService\obj\Debug\DoGoService.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\obj\Debug\DoGoService.pdb
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Google.Maps.dll
+C:\Users\omrih\Desktop\DoGoService\DoGoService\bin\Google.Maps.pdb
+C:\DoGoService\DoGoService\bin\ApplicationInsights.config
+C:\DoGoService\DoGoService\bin\AutoMapper.Net4.dll
+C:\DoGoService\DoGoService\bin\DoGoService.dll.config
+C:\DoGoService\DoGoService\bin\DoGoService.dll
+C:\DoGoService\DoGoService\bin\DoGoService.pdb
+C:\DoGoService\DoGoService\bin\Autofac.dll
+C:\DoGoService\DoGoService\bin\AutoMapper.dll
+C:\DoGoService\DoGoService\bin\EntityFramework.dll
+C:\DoGoService\DoGoService\bin\EntityFramework.SqlServer.dll
+C:\DoGoService\DoGoService\bin\Google.Maps.dll
+C:\DoGoService\DoGoService\bin\Microsoft.AI.Agent.Intercept.dll
+C:\DoGoService\DoGoService\bin\Microsoft.AI.DependencyCollector.dll
+C:\DoGoService\DoGoService\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\DoGoService\DoGoService\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\DoGoService\DoGoService\bin\Microsoft.AI.Web.dll
+C:\DoGoService\DoGoService\bin\Microsoft.AI.WindowsServer.dll
+C:\DoGoService\DoGoService\bin\Microsoft.ApplicationInsights.dll
+C:\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Core.dll
+C:\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Data.Edm.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Data.OData.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.ActiveDirectory.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Cookies.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Facebook.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Google.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Jwt.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.OAuth.dll
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Twitter.dll
+C:\DoGoService\DoGoService\bin\Microsoft.ServiceBus.dll
+C:\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.dll
+C:\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Entity.dll
+C:\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.dll
+C:\DoGoService\DoGoService\bin\Newtonsoft.Json.dll
+C:\DoGoService\DoGoService\bin\Owin.dll
+C:\DoGoService\DoGoService\bin\RazorEngine.dll
+C:\DoGoService\DoGoService\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\DoGoService\DoGoService\bin\System.Net.Http.Formatting.dll
+C:\DoGoService\DoGoService\bin\System.Spatial.dll
+C:\DoGoService\DoGoService\bin\System.Web.Cors.dll
+C:\DoGoService\DoGoService\bin\System.Web.Http.Cors.dll
+C:\DoGoService\DoGoService\bin\System.Web.Http.dll
+C:\DoGoService\DoGoService\bin\System.Web.Http.OData.dll
+C:\DoGoService\DoGoService\bin\System.Web.Http.Owin.dll
+C:\DoGoService\DoGoService\bin\System.Web.Http.Tracing.dll
+C:\DoGoService\DoGoService\bin\System.Web.Razor.dll
+C:\DoGoService\DoGoService\bin\Autofac.xml
+C:\DoGoService\DoGoService\bin\AutoMapper.xml
+C:\DoGoService\DoGoService\bin\EntityFramework.xml
+C:\DoGoService\DoGoService\bin\EntityFramework.SqlServer.xml
+C:\DoGoService\DoGoService\bin\Google.Maps.pdb
+C:\DoGoService\DoGoService\bin\Microsoft.AI.DependencyCollector.xml
+C:\DoGoService\DoGoService\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\DoGoService\DoGoService\bin\Microsoft.AI.Web.xml
+C:\DoGoService\DoGoService\bin\Microsoft.AI.WindowsServer.xml
+C:\DoGoService\DoGoService\bin\Microsoft.ApplicationInsights.xml
+C:\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Core.xml
+C:\DoGoService\DoGoService\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Data.Edm.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Data.OData.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.ActiveDirectory.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Cookies.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Facebook.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Google.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Jwt.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.OAuth.xml
+C:\DoGoService\DoGoService\bin\Microsoft.Owin.Security.Twitter.xml
+C:\DoGoService\DoGoService\bin\Microsoft.ServiceBus.xml
+C:\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.xml
+C:\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Entity.xml
+C:\DoGoService\DoGoService\bin\Microsoft.WindowsAzure.Mobile.Service.Tables.xml
+C:\DoGoService\DoGoService\bin\Newtonsoft.Json.xml
+C:\DoGoService\DoGoService\bin\RazorEngine.pdb
+C:\DoGoService\DoGoService\bin\RazorEngine.xml
+C:\DoGoService\DoGoService\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\DoGoService\DoGoService\bin\System.Net.Http.Formatting.xml
+C:\DoGoService\DoGoService\bin\System.Spatial.xml
+C:\DoGoService\DoGoService\bin\System.Web.Http.xml
+C:\DoGoService\DoGoService\bin\System.Web.Http.Cors.xml
+C:\DoGoService\DoGoService\bin\System.Web.Http.OData.xml
+C:\DoGoService\DoGoService\bin\System.Web.Http.Owin.xml
+C:\DoGoService\DoGoService\bin\System.Web.Http.Tracing.xml
+C:\DoGoService\DoGoService\bin\System.Web.Razor.xml
+C:\DoGoService\DoGoService\bin\de\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\es\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\it\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\DoGoService\DoGoService\bin\de\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\es\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\fr\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\it\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\ja\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\ko\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\ru\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\DoGoService\DoGoService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\es\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\fr\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\it\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.Entity.resources.dll
+C:\DoGoService\DoGoService\bin\de\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\es\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\fr\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\it\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\ja\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\ko\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.Tables.resources.dll
+C:\DoGoService\DoGoService\bin\de\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\bin\es\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\bin\fr\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\bin\it\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\bin\ja\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\bin\ko\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\bin\ru\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hans\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\bin\zh-Hant\System.Spatial.resources.dll
+C:\DoGoService\DoGoService\obj\Debug\DoGoService.csprojResolveAssemblyReference.cache
+C:\DoGoService\DoGoService\obj\Debug\DoGoService.dll
+C:\DoGoService\DoGoService\obj\Debug\DoGoService.pdb

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DogoDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AvailabilityTimes">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="StartTime" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Size" Type="varchar" MaxLength="10" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trips">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WalkerId" Type="int" Nullable="false" />
+    <Property Name="OwnerId" Type="int" />
+    <Property Name="StartTime" Type="time" Precision="7" />
+    <Property Name="EndTime" Type="time" Precision="7" />
+    <Property Name="Paid" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserRequests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="RequestingUserId" Type="int" />
+    <Property Name="RequestedUserId" Type="int" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsWalker" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Walkers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="HourlyFee" Type="money" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AvailabilityTimes_ToTable">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="AvailabilityTimes" Type="Self.AvailabilityTimes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AvailabilityTimes">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dogs_ToTable">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Dogs" Type="Self.Dogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dogs">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_ToUsers">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_ToWalkers">
+    <End Role="Walkers" Type="Self.Walkers" Multiplicity="1" />
+    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Walkers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="WalkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRequests_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="UserRequests" Type="Self.UserRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRequests">
+        <PropertyRef Name="RequestingUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRequests_Users2">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="UserRequests" Type="Self.UserRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRequests">
+        <PropertyRef Name="RequestedUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Walkers_ToUsers">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Walkers" Type="Self.Walkers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Walkers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DogoDbModelStoreContainer">
+    <EntitySet Name="AvailabilityTimes" EntityType="Self.AvailabilityTimes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dogs" EntityType="Self.Dogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trips" EntityType="Self.Trips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRequests" EntityType="Self.UserRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Walkers" EntityType="Self.Walkers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AvailabilityTimes_ToTable" Association="Self.FK_AvailabilityTimes_ToTable">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AvailabilityTimes" EntitySet="AvailabilityTimes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dogs_ToTable" Association="Self.FK_Dogs_ToTable">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Dogs" EntitySet="Dogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_ToUsers" Association="Self.FK_Trips_ToUsers">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_ToWalkers" Association="Self.FK_Trips_ToWalkers">
+      <End Role="Walkers" EntitySet="Walkers" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRequests_Users1" Association="Self.FK_UserRequests_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRequests" EntitySet="UserRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRequests_Users2" Association="Self.FK_UserRequests_Users2">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRequests" EntitySet="UserRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Walkers_ToUsers" Association="Self.FK_Walkers_ToUsers">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Walkers" EntitySet="Walkers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
