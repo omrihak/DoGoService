@@ -13,10 +13,12 @@ namespace DoGoService.Algorithm
         private Queue<DogoMission> trail;
         private double averageDuration;
         private TimeSpan startTime;
+        private TimeSpan latestStart;
 
         public AlgorithmAnswer DoAlgorithm(DogoWaypoint dogoHome, List<DogoWaypoint> graphNodes, List<DogWalkDetails> dogWalkDetails, List<DogoLink> graphLinks)
         {
             startTime = DateTime.Now - DateTime.Today;
+            latestStart = TimeSpan.MaxValue;
             GlobalTime = startTime;
             trail = new Queue<DogoMission>();
             trail.Enqueue(new DogoMission() { waypoint = dogoHome.address, length = 0, type = MissionType.Start });
@@ -42,23 +44,12 @@ namespace DoGoService.Algorithm
                 {
                     secondNode.timeOfFirstWaypointPass = GlobalTime;
                     graphLinks.Where(link => link.destWaypoint == secondNode).ToList().ForEach(link => {
-                        link.duration = Math.Max(link.realDuration,  getTimeOfWalk(dogWalkDetails, node.address) + (secondNode.timeOfFirstWaypointPass - GlobalTime).Seconds);
+                        link.duration = (int)Math.Max(link.realDuration,  getTimeOfWalk(dogWalkDetails, node.address) + (secondNode.timeOfFirstWaypointPass - GlobalTime).TotalSeconds);
                     });
                 }
             }
 
-            var links = graphLinks.Where(link => link.sourceWaypoint == node && !link.destWaypoint.isPassed && link.duration != int.MaxValue &&
-                    dogWalkDetails.First(walk => walk.Address == link.destWaypoint.address).EarliestPickup > GlobalTime.Add(new TimeSpan(0, 0, link.realDuration)));
-            var addDelayToStart = false;
-            if (links.Count() == 0)
-            {
-                var linksWithDelay = graphLinks.Where(link => link.sourceWaypoint == node && !link.destWaypoint.isPassed && link.duration != int.MaxValue);
-                if (linksWithDelay.Count() > 0)
-                {
-                    addDelayToStart = true;
-                    links = linksWithDelay;
-                }
-            }
+            var links = graphLinks.Where(link => link.sourceWaypoint == node && !link.destWaypoint.isPassed && link.duration != int.MaxValue);
 
             if (links.Count() > 0)
             {
@@ -78,33 +69,66 @@ namespace DoGoService.Algorithm
                 }
 
                 GlobalTime = GlobalTime.Add(new TimeSpan(0, 0, minLink.duration));
-                if (addDelayToStart)
+                var currentWalk = dogWalkDetails.First(walk => walk.Address == minLink.destWaypoint.address);
+                if (minLink.realDuration != minLink.duration)
                 {
-                    startTime = startTime.Add(dogWalkDetails.First(walk => walk.Address == minLink.destWaypoint.address).EarliestPickup - GlobalTime);
+                    var isTooEarly = currentWalk.EarliestPickup > GlobalTime;
+
+                    if (isTooEarly && !minLink.destWaypoint.isReturnWaypoint)
+                    {
+                        GlobalTime = GlobalTime.Add(new TimeSpan(0, 0, -minLink.duration));
+                        GlobalTime = GlobalTime.Add(new TimeSpan(0, 0, minLink.realDuration));
+                        if (startTime + currentWalk.EarliestPickup - GlobalTime <= latestStart)
+                        {
+                            latestStart += currentWalk.EarliestPickup - GlobalTime;
+                            startTime += currentWalk.EarliestPickup - GlobalTime;
+                            GlobalTime += currentWalk.EarliestPickup - GlobalTime;
+                        }
+                        else
+                        {
+                            var waitTime = startTime + currentWalk.EarliestPickup - GlobalTime - latestStart;
+                            GlobalTime += latestStart - startTime;
+                            startTime = latestStart;
+                            trail.Enqueue(new DogoMission() { length = (int)waitTime.TotalSeconds, type = MissionType.Wait });
+                            GlobalTime = GlobalTime.Add(waitTime);
+                        }
+                    }
+                    else
+                    {
+                        trail.Enqueue(new DogoMission() { length = minLink.duration - minLink.realDuration, type = MissionType.Wait });
+                    }
                 }
 
-                if (minLink.realDuration == minLink.duration)
-                {
-                    trail.Enqueue(new DogoMission() { waypoint = minLink.destWaypoint.address, length = minLink.realDuration, type = minLink.destWaypoint.isReturnWaypoint ? MissionType.WalkReturn : MissionType.WalkPickup });
-                }
-                else
-                {
-                    trail.Enqueue(new DogoMission() { waypoint = minLink.destWaypoint.address, length = minLink.duration - minLink.realDuration, type = MissionType.WaitReturn });
+                trail.Enqueue(new DogoMission() { waypoint = minLink.destWaypoint.address, length = minLink.realDuration, type = minLink.destWaypoint.isReturnWaypoint ? MissionType.WalkReturn : MissionType.WalkPickup });
 
+                if(!minLink.destWaypoint.isReturnWaypoint)
+                {
+                    var latestStartLocal = startTime + (currentWalk.LatestPickup - GlobalTime);
+                    if (latestStart > latestStartLocal)
+                    {
+                        latestStart = latestStartLocal;
+                    }
                 }
+               
                 node.isPassed = true;
 
 
                 graphLinks.Where(link => link.destWaypoint.isReturnWaypoint).ToList().ForEach(link => {
 
-                    if (link.destWaypoint.timeOfFirstWaypointPass.Seconds != -1)
+                    if (link.destWaypoint.timeOfFirstWaypointPass.TotalSeconds != -1)
                     {
-                        link.duration = Math.Max(link.realDuration,  getTimeOfWalk(dogWalkDetails, link.destWaypoint.address) + (link.destWaypoint.timeOfFirstWaypointPass - GlobalTime).Seconds);
+                        link.duration = (int)Math.Max(link.realDuration,  getTimeOfWalk(dogWalkDetails, link.destWaypoint.address) + (link.destWaypoint.timeOfFirstWaypointPass - GlobalTime).TotalSeconds);
                     }
                     else
                     {
                         link.duration = int.MaxValue;
                     }
+                });
+
+                graphLinks.Where(link => !link.destWaypoint.isReturnWaypoint).ToList().ForEach(link =>
+                {
+                    var currWalk = dogWalkDetails.FirstOrDefault(walk => walk.Address == link.destWaypoint.address);
+                    link.duration = (int)Math.Max(link.realDuration, currWalk != null ? ( currWalk.EarliestPickup - GlobalTime).TotalSeconds : 0);
                 });
 
                 DoRecursive(minLink.destWaypoint, graphNodes, dogWalkDetails, graphLinks);

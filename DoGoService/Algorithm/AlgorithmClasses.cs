@@ -30,14 +30,15 @@ namespace DoGoService.Algorithm
         public int TimeOfWalk { get; set; }
         public string Address { get; set; }
         public TimeSpan EarliestPickup { get; set; }
+        public TimeSpan LatestPickup { get; set; }
     }
 
     public enum MissionType
     {
-        WalkPickup,
+        WalkPickup = 1,
         WalkReturn,
         Walk,
-        WaitReturn,
+        Wait,
         Start
     }
 
