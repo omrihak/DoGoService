@@ -221,8 +221,6 @@
           <Property Name="StartTime" Type="Time" Precision="7" />
           <Property Name="EndTime" Type="Time" Precision="7" />
           <Property Name="Paid" Type="Boolean" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Trips_ToUsers" FromRole="Trips" ToRole="Users" />
-          <NavigationProperty Name="Walker" Relationship="Self.FK_Trips_ToWalkers" FromRole="Trips" ToRole="Walkers" />
         </EntityType>
         <EntityType Name="UserRequest">
           <Key>

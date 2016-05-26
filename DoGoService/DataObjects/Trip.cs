@@ -20,8 +20,5 @@ namespace DoGoService.DataObjects
         public Nullable<System.TimeSpan> StartTime { get; set; }
         public Nullable<System.TimeSpan> EndTime { get; set; }
         public Nullable<bool> Paid { get; set; }
-    
-        public virtual User User { get; set; }
-        public virtual Walker Walker { get; set; }
     }
 }
