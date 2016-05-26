@@ -252,11 +252,19 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithm\AlgorithmClasses.cs" />
-    <Compile Include="Algorithm\AlgorithmManager.cs" />
-    <Compile Include="Algorithm\SmartGreedyAlgorithm.cs" />
+    <Compile Include="Paths\Models\WalkerPath.cs" />
+    <Compile Include="Paths\Enums\NodeAction.cs" />
+    <Compile Include="Paths\Models\WalkRequest.cs" />
+    <Compile Include="Paths\AlgorithmManager.cs" />
+    <Compile Include="Paths\Models\PathNode.cs" />
+    <Compile Include="Paths\Models\DogoWaypoint.cs" />
+    <Compile Include="Paths\Models\DogWalk.cs" />
+    <Compile Include="Paths\Models\DogWalkDetails.cs" />
+    <Compile Include="Paths\Models\WalkerPathLink.cs" />
+    <Compile Include="Paths\SmartGreedyAlgorithm.cs" />
+    <Compile Include="Paths\Models\WaypointLink.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AlgorithmController.cs" />
+    <Compile Include="Controllers\PathsController.cs" />
     <Compile Include="Controllers\DogsController.cs" />
     <Compile Include="Controllers\TripsController.cs" />
     <Compile Include="Controllers\UserRequestsController.cs" />

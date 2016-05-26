@@ -1,4 +1,5 @@
-﻿using DoGoService.DataObjects;
+﻿using DoGoService.Paths.Models;
+using DoGoService.DataObjects;
 using Google.Maps;
 using Google.Maps.DistanceMatrix;
 using System;
@@ -9,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace DoGoService.Algorithm
+namespace DoGoService.Paths
 {
     public class AlgorithmManager
     {
@@ -24,42 +25,42 @@ namespace DoGoService.Algorithm
             }
         }
 
-        public static AlgorithmAnswer DoAlgorithm(string homeLocation, List<DogWalk> walks)
+        public static WalkerPath DoAlgorithm(string homeLocation, List<DogWalk> walks)
         {
             init();
             var dogWalkDetails = new List<DogWalkDetails>();
-            var dogUserIds = walks.Select(walk => walk.DogUserId);
-            
+            var dogUserIds = walks.Select(walk => walk.UserId);
+
             var availabilityTimes = (from av in db.AvailabilityTimes
-                                    where dogUserIds.Contains(av.UserId)
-                                    select av).ToList();
+                                     where dogUserIds.Contains(av.UserId)
+                                     select av).ToList();
             var usersWithDogs = db.Users.Where(dog => dogUserIds.Contains(dog.Id));
             walks.ForEach(walk =>
             {
-                var avTimes = availabilityTimes.Where(t => t.UserId == walk.DogUserId).ToList();
+                var avTimes = availabilityTimes.Where(t => t.UserId == walk.UserId).ToList();
                 avTimes.Sort((a, b) => a.StartTime.CompareTo(b.StartTime));
                 var earliestPickup = avTimes.First().StartTime;
                 avTimes.Sort((a, b) => a.EndTime.CompareTo(b.EndTime));
                 var latestPickup = avTimes.Last().EndTime;
-                var userToAdd = usersWithDogs.First(user => user.Id == walk.DogUserId);
+                var userToAdd = usersWithDogs.First(user => user.Id == walk.UserId);
+
                 dogWalkDetails.Add(new DogWalkDetails()
                 {
                     Address = userToAdd.Address + " " + userToAdd.City,
                     EarliestPickup = earliestPickup,
                     LatestPickup = latestPickup,
-                    TimeOfWalk = walk.TimeOfWalk * 60
+                    TimeOfWalk = walk.Duration * 60
                 });
             });
 
-            List<DogoLink> graphLinks;
+            List<WalkerPathLink> graphLinks;
             DogoWaypoint dogoHome;
             List<DogoWaypoint> graphNodes;
             GetAlgorithmData(homeLocation, dogWalkDetails, out graphNodes, out graphLinks, out dogoHome);
-            return new SmartGreedyAlgorithm().DoAlgorithm(dogoHome, graphNodes, dogWalkDetails, graphLinks);
+            return new SmartGreedyAlgorithm().CalculatePath(dogoHome, graphNodes, dogWalkDetails, graphLinks);
         }
 
-
-        public static void GetAlgorithmData(string homeLocation, List<DogWalkDetails> dogWalks, out List<DogoWaypoint> graphNodes,  out List<DogoLink> graphLinks, out DogoWaypoint dogoHome)
+        public static void GetAlgorithmData(string homeLocation, List<DogWalkDetails> dogWalks, out List<DogoWaypoint> graphNodes, out List<WalkerPathLink> graphLinks, out DogoWaypoint dogoHome)
         {
             DistanceMatrixService service = new DistanceMatrixService();
             service.BaseUri = new Uri("https://maps.google.com/maps/api/distancematrix/");
@@ -114,9 +115,9 @@ namespace DoGoService.Algorithm
                     {
                         links.Add(new WaypointLink()
                         {
-                            sourceWaypoint = origin.Address,
-                            destWaypoint = request.WaypointsDestination.Values[j].Address,
-                            duration = int.Parse(response.Rows[0].Elements[j].duration.Value)
+                            SourceWaypoint = origin.Address,
+                            DestWaypoint = request.WaypointsDestination.Values[j].Address,
+                            Duration = int.Parse(response.Rows[0].Elements[j].duration.Value)
                         });
                     }
 
@@ -132,9 +133,9 @@ namespace DoGoService.Algorithm
                 links.Add(
                     new WaypointLink()
                     {
-                        sourceWaypoint = link.destWaypoint,
-                        destWaypoint = link.sourceWaypoint,
-                        duration = link.duration
+                        SourceWaypoint = link.DestWaypoint,
+                        DestWaypoint = link.SourceWaypoint,
+                        Duration = link.Duration
                     });
             });
 
@@ -142,27 +143,27 @@ namespace DoGoService.Algorithm
             {
                 links.Add(new WaypointLink()
                 {
-                    sourceWaypoint = waypoint.Address,
-                    destWaypoint = waypoint.Address,
-                    duration = 0
+                    SourceWaypoint = waypoint.Address,
+                    DestWaypoint = waypoint.Address,
+                    Duration = 0
                 });
             }
 
             dogWalks.Remove(homeWalkDetails);
             graphNodes = new List<DogoWaypoint>();
-            graphLinks = new List<DogoLink>();
+            graphLinks = new List<WalkerPathLink>();
             foreach (var waypoint in dogWaypointsDic.Keys.ToList())
             {
-                var first = new DogoWaypoint() { address = waypoint.Address, isPassed = false, isReturnWaypoint = false, timeOfFirstWaypointPass = new TimeSpan(0,0,-1) };
+                var first = new DogoWaypoint() { Address = waypoint.Address, IsPassed = false, IsReturnWaypoint = false, TimeOfFirstWaypointPass = new TimeSpan(0, 0, -1) };
                 if (waypoint != home)
                 {
-                    var second = new DogoWaypoint() { address = waypoint.Address, isPassed = false, isReturnWaypoint = true, timeOfFirstWaypointPass = new TimeSpan(0, 0, -1) };
+                    var second = new DogoWaypoint() { Address = waypoint.Address, IsPassed = false, IsReturnWaypoint = true, TimeOfFirstWaypointPass = new TimeSpan(0, 0, -1) };
                     graphNodes.Add(second);
                 }
                 graphNodes.Add(first);
             }
 
-            dogoHome = graphNodes.First(node => node.address == homeLocation);
+            dogoHome = graphNodes.First(node => node.Address == homeLocation);
             var nowTime = DateTime.Now - DateTime.Today;
             foreach (var sourceWaypoint in graphNodes.ToList())
             {
@@ -170,15 +171,15 @@ namespace DoGoService.Algorithm
                 {
                     if (sourceWaypoint != destWaypoint)
                     {
-                        var duration = links.FirstOrDefault(link => link.sourceWaypoint == sourceWaypoint.address && link.destWaypoint == destWaypoint.address).duration;
-                        var currWalk = dogWalks.FirstOrDefault(walk => walk.Address == destWaypoint.address);
-                        if (destWaypoint.isReturnWaypoint)
+                        var duration = links.FirstOrDefault(link => link.SourceWaypoint == sourceWaypoint.Address && link.DestWaypoint == destWaypoint.Address).Duration;
+                        var currWalk = dogWalks.FirstOrDefault(walk => walk.Address == destWaypoint.Address);
+                        if (destWaypoint.IsReturnWaypoint)
                         {
-                            graphLinks.Add(new DogoLink() { sourceWaypoint = sourceWaypoint, destWaypoint = destWaypoint, duration = int.MaxValue, realDuration = duration });
+                            graphLinks.Add(new WalkerPathLink() { SourceWaypoint = sourceWaypoint, DestWaypoint = destWaypoint, Duration = int.MaxValue, RealDuration = duration });
                         }
-                        else 
+                        else
                         {
-                            graphLinks.Add(new DogoLink() { sourceWaypoint = sourceWaypoint, destWaypoint = destWaypoint, duration = (int)Math.Max(currWalk != null ? (currWalk.EarliestPickup - nowTime).TotalSeconds : 0,duration), realDuration = duration });
+                            graphLinks.Add(new WalkerPathLink() { SourceWaypoint = sourceWaypoint, DestWaypoint = destWaypoint, Duration = (int)Math.Max(currWalk != null ? (currWalk.EarliestPickup - nowTime).TotalSeconds : 0, duration), RealDuration = duration });
                         }
                     }
                 }
