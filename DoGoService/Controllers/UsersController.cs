@@ -20,7 +20,7 @@ namespace DoGoService.Controllers
         // GET: api/Users
         public IQueryable<User> GetUsers()
         {
-            return db.Users;
+            return db.Users.AsNoTracking();
         }
 
         // GET: api/Users/5

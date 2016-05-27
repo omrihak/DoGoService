@@ -18,6 +18,7 @@ namespace DoGoService.DataObjects
         public DogoDbEntities()
             : base("name=DogoDbEntities")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

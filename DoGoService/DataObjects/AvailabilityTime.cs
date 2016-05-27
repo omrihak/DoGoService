@@ -17,7 +17,5 @@ namespace DoGoService.DataObjects
         public int UserId { get; set; }
         public System.TimeSpan StartTime { get; set; }
         public System.TimeSpan EndTime { get; set; }
-    
-        public virtual User User { get; set; }
     }
 }

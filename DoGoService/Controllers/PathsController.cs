@@ -15,7 +15,7 @@ namespace DoGoService.Controllers
 
         // POST: api/Algorithm
         [ResponseType(typeof(WalkerPath))]
-        public IHttpActionResult PostAlgorithm(WalkRequest dogData)
+        public IHttpActionResult PostPath(WalkRequest dogData)
         {
             dogData.DogWalks[0].UserId = 1;
             dogData.DogWalks[0].Duration = 45;
