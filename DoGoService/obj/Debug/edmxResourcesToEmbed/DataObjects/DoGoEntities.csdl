@@ -56,7 +56,7 @@
     <NavigationProperty Name="availabilityTimes" Relationship="Self.FK_AvailabilityTimes_ToTable" FromRole="Users" ToRole="AvailabilityTimes" />
     <NavigationProperty Name="walker" Relationship="Self.FK_Walkers_ToUsers" FromRole="Users" ToRole="Walkers" />
     <Property Name="dogId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Dog" Relationship="DogoDbModel.FK_Users_ToDogs" FromRole="User" ToRole="Dog" />
+    <NavigationProperty Name="dog" Relationship="DogoDbModel.FK_Users_ToDogs" FromRole="User" ToRole="Dog" />
   </EntityType>
   <EntityType Name="Walker">
     <Key>

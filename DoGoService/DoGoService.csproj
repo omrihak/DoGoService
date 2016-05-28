@@ -269,7 +269,6 @@
     <Compile Include="Controllers\DogsController.cs" />
     <Compile Include="Controllers\TripsController.cs" />
     <Compile Include="Controllers\UserRequestsController.cs" />
-    <Compile Include="Controllers\UsersController - EF.cs" />
     <Compile Include="Controllers\WalkersController.cs" />
     <Compile Include="DataObjects\AvailabilityTime.cs">
       <DependentUpon>DoGoEntities.tt</DependentUpon>

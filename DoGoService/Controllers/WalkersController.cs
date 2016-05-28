@@ -66,6 +66,16 @@ namespace DoGoService.Controllers
         // PUT: api/Some/5
         public void Put(int id, [FromBody]string value)
         {
+            var postedWalker = JsonConvert.DeserializeObject<User>(value);
+
+            db.Walkers.Remove(db.Walkers.First(walker => walker.userId == id));
+            db.Walkers.Add(postedWalker.walker);
+
+            db.AvailabilityTimes.RemoveRange(db.AvailabilityTimes.Where(times => times.userId == id));
+            db.AvailabilityTimes.AddRange(postedWalker.availabilityTimes);
+
+            db.Users.Remove(db.Users.First(walker => walker.id == id));
+            db.Users.Add(postedWalker);
         }
 
         // DELETE: api/Some/5
