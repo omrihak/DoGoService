@@ -1,40 +1,42 @@
-﻿using System;
+﻿using DoGoService.DataObjects;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Description;
-using DoGoService.DataObjects;
-using Newtonsoft.Json;
 
 namespace DoGoService.Controllers
 {
     [AllowAnonymous]
-    public class WalkersController : ApiController
+    public class OwnersController : ApiController
     {
-        private DogoDbEntities db = new DogoDbEntities();
+        DogoDbEntities db = new DogoDbEntities();
 
         // GET: api/Some
         public IEnumerable<string> Get()
         {
-            return QueryDate().Select(walker => JsonConvert.SerializeObject(walker));
+            return QueryDate().Select(owner => JsonConvert.SerializeObject(owner));
         }
 
         private IEnumerable<User> QueryDate()
         {
             var parameters = Request.GetQueryNameValuePairs().ToList();
-            var walkers = db.Users.Where(user => user.isWalker).ToList();
+            var owners = db.Users.Where(user => !user.isWalker).ToList();
 
             if (parameters.Any(par => par.Key == "userName"))
             {
-                walkers = walkers.Where(walker => walker.userName == parameters.First(par => par.Key == "userName").Value).ToList();
+                owners = owners.Where(owner => owner.userName == parameters.First(par => par.Key == "userName").Value).ToList();
             }
 
-            return walkers;
+            if (parameters.Any(par => par.Key == "connectedTo"))
+            {
+                owners = owners.Where(owner => db.UserRequests.Any(request => request.status == "Accepted"
+                && (request.requestingUserId == owner.id || request.requestedUserId == owner.id))).ToList();
+            }
+
+            return owners;
         }
 
         // GET: api/Some/5
@@ -52,15 +54,14 @@ namespace DoGoService.Controllers
         // POST: api/Some
         public void Post([FromBody]string value)
         {
-            var walker = JsonConvert.DeserializeObject<User>(value);
-            walker.id = db.Users.Max(user => user.id) + 1;
-
-            walker.walker.userId = walker.id;
-            db.Walkers.Add(walker.walker);
-
-            walker.availabilityTimes.ToList().ForEach(time => time.userId = walker.id);
-            db.AvailabilityTimes.AddRange(walker.availabilityTimes);
-            db.Users.Add(walker);
+            var owner = JsonConvert.DeserializeObject<User>(value);
+            owner.dog.id = db.Dogs.Max(dog => dog.id) + 1;
+            owner.dogId = owner.dog.id;
+            db.Dogs.Add(owner.dog);
+            owner.id = db.Users.Max(user => user.id) + 1;
+            owner.availabilityTimes.ToList().ForEach(time => time.userId = owner.id);
+            db.AvailabilityTimes.AddRange(owner.availabilityTimes);
+            db.Users.Add(owner);
         }
 
         // PUT: api/Some/5

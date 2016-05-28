@@ -17,7 +17,6 @@
           <ScalarProperty Name="name" ColumnName="Name" />
           <ScalarProperty Name="age" ColumnName="Age" />
           <ScalarProperty Name="size" ColumnName="Size" />
-          <ScalarProperty Name="userId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -46,6 +45,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="DogoDbModel.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="dogId" ColumnName="DogId" />
           <ScalarProperty Name="id" ColumnName="Id" />
           <ScalarProperty Name="address" ColumnName="Address" />
           <ScalarProperty Name="userName" ColumnName="UserName" />

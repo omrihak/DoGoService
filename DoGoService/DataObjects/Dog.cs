@@ -18,6 +18,5 @@ namespace DoGoService.DataObjects
         public string name { get; set; }
         public Nullable<int> age { get; set; }
         public string size { get; set; }
-        public int userId { get; set; }
     }
 }

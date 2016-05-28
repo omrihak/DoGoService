@@ -22,7 +22,6 @@
           <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Age" Type="int" />
           <Property Name="Size" Type="varchar" MaxLength="10" />
-          <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Trips">
           <Key>
@@ -57,6 +56,7 @@
           <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
           <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IsWalker" Type="bit" Nullable="false" />
+          <Property Name="DogId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Walkers">
           <Key>
@@ -74,18 +74,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="AvailabilityTimes">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Dogs_ToTable">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Dogs" Type="Self.Dogs" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Dogs">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -138,6 +126,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Users_ToDogs">
+          <End Role="Dogs" Type="Self.Dogs" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dogs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="DogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Walkers_ToUsers">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Walkers" Type="Self.Walkers" Multiplicity="0..1" />
@@ -161,10 +161,6 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="AvailabilityTimes" EntitySet="AvailabilityTimes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Dogs_ToTable" Association="Self.FK_Dogs_ToTable">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Dogs" EntitySet="Dogs" />
-          </AssociationSet>
           <AssociationSet Name="FK_Trips_ToUsers" Association="Self.FK_Trips_ToUsers">
             <End Role="Users" EntitySet="Users" />
             <End Role="Trips" EntitySet="Trips" />
@@ -180,6 +176,10 @@
           <AssociationSet Name="FK_UserRequests_RequestingUser" Association="Self.FK_UserRequests_RequestingUser">
             <End Role="Users" EntitySet="Users" />
             <End Role="UserRequests" EntitySet="UserRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_ToDogs" Association="Self.FK_Users_ToDogs">
+            <End Role="Dogs" EntitySet="Dogs" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_Walkers_ToUsers" Association="Self.FK_Walkers_ToUsers">
             <End Role="Users" EntitySet="Users" />
@@ -207,7 +207,6 @@
           <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="age" Type="Int32" />
           <Property Name="size" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="userId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Trip">
           <Key>
@@ -245,11 +244,9 @@
           <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isWalker" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="availabilityTimes" Relationship="Self.FK_AvailabilityTimes_ToTable" FromRole="Users" ToRole="AvailabilityTimes" />
-          <NavigationProperty Name="dogs" Relationship="Self.FK_Dogs_ToTable" FromRole="Users" ToRole="Dogs" />
-          <NavigationProperty Name="trips" Relationship="Self.FK_Trips_ToUsers" FromRole="Users" ToRole="Trips" />
-          <NavigationProperty Name="requestsSent" Relationship="Self.FK_UserRequests_Users1" FromRole="Users" ToRole="UserRequests" />
-          <NavigationProperty Name="requestsRecieved" Relationship="Self.FK_UserRequests_Users2" FromRole="Users" ToRole="UserRequests" />
           <NavigationProperty Name="walker" Relationship="Self.FK_Walkers_ToUsers" FromRole="Users" ToRole="Walkers" />
+          <Property Name="dogId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="dog" Relationship="DogoDbModel.FK_Users_ToDogs" FromRole="User" ToRole="Dog" />
         </EntityType>
         <EntityType Name="Walker">
           <Key>
@@ -268,18 +265,6 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="AvailabilityTimes">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Dogs_ToTable">
-          <End Role="Users" Type="Self.User" Multiplicity="1" />
-          <End Role="Dogs" Type="Self.Dog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Dogs">
               <PropertyRef Name="userId" />
             </Dependent>
           </ReferentialConstraint>
@@ -355,10 +340,6 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="AvailabilityTimes" EntitySet="AvailabilityTimes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Dogs_ToTable" Association="Self.FK_Dogs_ToTable">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Dogs" EntitySet="Dogs" />
-          </AssociationSet>
           <AssociationSet Name="FK_Trips_ToUsers" Association="Self.FK_Trips_ToUsers">
             <End Role="Users" EntitySet="Users" />
             <End Role="Trips" EntitySet="Trips" />
@@ -379,7 +360,23 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Walkers" EntitySet="Walkers" />
           </AssociationSet>
+          <AssociationSet Name="FK_Users_ToDogs" Association="DogoDbModel.FK_Users_ToDogs">
+            <End Role="Dog" EntitySet="Dogs" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Users_ToDogs">
+          <End Type="DogoDbModel.Dog" Role="Dog" Multiplicity="1" />
+          <End Type="DogoDbModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="dogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -402,7 +399,6 @@
                 <ScalarProperty Name="name" ColumnName="Name" />
                 <ScalarProperty Name="age" ColumnName="Age" />
                 <ScalarProperty Name="size" ColumnName="Size" />
-                <ScalarProperty Name="userId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -431,6 +427,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="DogoDbModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="dogId" ColumnName="DogId" />
                 <ScalarProperty Name="id" ColumnName="Id" />
                 <ScalarProperty Name="address" ColumnName="Address" />
                 <ScalarProperty Name="userName" ColumnName="UserName" />

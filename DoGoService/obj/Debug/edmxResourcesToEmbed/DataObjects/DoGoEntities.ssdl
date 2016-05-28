@@ -17,7 +17,6 @@
     <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Age" Type="int" />
     <Property Name="Size" Type="varchar" MaxLength="10" />
-    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Trips">
     <Key>
@@ -52,6 +51,7 @@
     <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
     <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IsWalker" Type="bit" Nullable="false" />
+    <Property Name="DogId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Walkers">
     <Key>
@@ -69,18 +69,6 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="AvailabilityTimes">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Dogs_ToTable">
-    <End Role="Users" Type="Self.Users" Multiplicity="1" />
-    <End Role="Dogs" Type="Self.Dogs" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Dogs">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
@@ -133,6 +121,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Users_ToDogs">
+    <End Role="Dogs" Type="Self.Dogs" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dogs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="DogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Walkers_ToUsers">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Walkers" Type="Self.Walkers" Multiplicity="0..1" />
@@ -156,10 +156,6 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="AvailabilityTimes" EntitySet="AvailabilityTimes" />
     </AssociationSet>
-    <AssociationSet Name="FK_Dogs_ToTable" Association="Self.FK_Dogs_ToTable">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Dogs" EntitySet="Dogs" />
-    </AssociationSet>
     <AssociationSet Name="FK_Trips_ToUsers" Association="Self.FK_Trips_ToUsers">
       <End Role="Users" EntitySet="Users" />
       <End Role="Trips" EntitySet="Trips" />
@@ -175,6 +171,10 @@
     <AssociationSet Name="FK_UserRequests_RequestingUser" Association="Self.FK_UserRequests_RequestingUser">
       <End Role="Users" EntitySet="Users" />
       <End Role="UserRequests" EntitySet="UserRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_ToDogs" Association="Self.FK_Users_ToDogs">
+      <End Role="Dogs" EntitySet="Dogs" />
+      <End Role="Users" EntitySet="Users" />
     </AssociationSet>
     <AssociationSet Name="FK_Walkers_ToUsers" Association="Self.FK_Walkers_ToUsers">
       <End Role="Users" EntitySet="Users" />

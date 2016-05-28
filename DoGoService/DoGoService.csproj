@@ -252,6 +252,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\OwnersController.cs" />
     <Compile Include="Paths\Models\WalkerPath.cs" />
     <Compile Include="Paths\Enums\NodeAction.cs" />
     <Compile Include="Paths\Models\WalkRequest.cs" />
@@ -268,7 +269,7 @@
     <Compile Include="Controllers\DogsController.cs" />
     <Compile Include="Controllers\TripsController.cs" />
     <Compile Include="Controllers\UserRequestsController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\UsersController - EF.cs" />
     <Compile Include="Controllers\WalkersController.cs" />
     <Compile Include="DataObjects\AvailabilityTime.cs">
       <DependentUpon>DoGoEntities.tt</DependentUpon>

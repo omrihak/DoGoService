@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="07400266de5a4998a05f4dfcb429b978" Name="Diagram1" ZoomLevel="120">
+      <Diagram DiagramId="07400266de5a4998a05f4dfcb429b978" Name="Diagram1" ZoomLevel="109">
         <EntityTypeShape EntityType="DogoDbModel.AvailabilityTime" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DogoDbModel.Dog" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DogoDbModel.Trip" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
@@ -12,12 +12,12 @@
         <EntityTypeShape EntityType="DogoDbModel.User" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DogoDbModel.Walker" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
         <AssociationConnector Association="DogoDbModel.FK_AvailabilityTimes_ToTable" ManuallyRouted="false" />
-        <AssociationConnector Association="DogoDbModel.FK_Dogs_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="DogoDbModel.FK_Trips_ToUsers" ManuallyRouted="false" />
         <AssociationConnector Association="DogoDbModel.FK_Trips_ToWalkers" ManuallyRouted="false" />
         <AssociationConnector Association="DogoDbModel.FK_UserRequests_Users1" ManuallyRouted="false" />
         <AssociationConnector Association="DogoDbModel.FK_UserRequests_Users2" ManuallyRouted="false" />
         <AssociationConnector Association="DogoDbModel.FK_Walkers_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DogoDbModel.FK_Users_ToDogs" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -17,7 +17,6 @@
     <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="age" Type="Int32" />
     <Property Name="size" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="userId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Trip">
     <Key>
@@ -55,11 +54,9 @@
     <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="isWalker" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="availabilityTimes" Relationship="Self.FK_AvailabilityTimes_ToTable" FromRole="Users" ToRole="AvailabilityTimes" />
-    <NavigationProperty Name="dogs" Relationship="Self.FK_Dogs_ToTable" FromRole="Users" ToRole="Dogs" />
-    <NavigationProperty Name="trips" Relationship="Self.FK_Trips_ToUsers" FromRole="Users" ToRole="Trips" />
-    <NavigationProperty Name="requestsSent" Relationship="Self.FK_UserRequests_Users1" FromRole="Users" ToRole="UserRequests" />
-    <NavigationProperty Name="requestsRecieved" Relationship="Self.FK_UserRequests_Users2" FromRole="Users" ToRole="UserRequests" />
     <NavigationProperty Name="walker" Relationship="Self.FK_Walkers_ToUsers" FromRole="Users" ToRole="Walkers" />
+    <Property Name="dogId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dog" Relationship="DogoDbModel.FK_Users_ToDogs" FromRole="User" ToRole="Dog" />
   </EntityType>
   <EntityType Name="Walker">
     <Key>
@@ -78,18 +75,6 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="AvailabilityTimes">
-        <PropertyRef Name="userId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Dogs_ToTable">
-    <End Role="Users" Type="Self.User" Multiplicity="1" />
-    <End Role="Dogs" Type="Self.Dog" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Dogs">
         <PropertyRef Name="userId" />
       </Dependent>
     </ReferentialConstraint>
@@ -165,10 +150,6 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="AvailabilityTimes" EntitySet="AvailabilityTimes" />
     </AssociationSet>
-    <AssociationSet Name="FK_Dogs_ToTable" Association="Self.FK_Dogs_ToTable">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Dogs" EntitySet="Dogs" />
-    </AssociationSet>
     <AssociationSet Name="FK_Trips_ToUsers" Association="Self.FK_Trips_ToUsers">
       <End Role="Users" EntitySet="Users" />
       <End Role="Trips" EntitySet="Trips" />
@@ -189,5 +170,21 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Walkers" EntitySet="Walkers" />
     </AssociationSet>
+    <AssociationSet Name="FK_Users_ToDogs" Association="DogoDbModel.FK_Users_ToDogs">
+      <End Role="Dog" EntitySet="Dogs" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_Users_ToDogs">
+    <End Type="DogoDbModel.Dog" Role="Dog" Multiplicity="1" />
+    <End Type="DogoDbModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dog">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="dogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

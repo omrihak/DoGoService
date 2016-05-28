@@ -18,10 +18,6 @@ namespace DoGoService.DataObjects
         public User()
         {
             this.availabilityTimes = new HashSet<AvailabilityTime>();
-            this.dogs = new HashSet<Dog>();
-            this.trips = new HashSet<Trip>();
-            this.requestsSent = new HashSet<UserRequest>();
-            this.requestsRecieved = new HashSet<UserRequest>();
         }
     
         public int id { get; set; }
@@ -33,17 +29,11 @@ namespace DoGoService.DataObjects
         public string phoneNumber { get; set; }
         public string city { get; set; }
         public bool isWalker { get; set; }
+        public int dogId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AvailabilityTime> availabilityTimes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dog> dogs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Trip> trips { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserRequest> requestsSent { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserRequest> requestsRecieved { get; set; }
         public virtual Walker walker { get; set; }
+        public virtual Dog dog { get; set; }
     }
 }
