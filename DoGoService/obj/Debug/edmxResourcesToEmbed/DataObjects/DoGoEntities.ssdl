@@ -109,19 +109,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserRequests_Users1">
-    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-    <End Role="UserRequests" Type="Self.UserRequests" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="UserRequests">
-        <PropertyRef Name="RequestingUserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserRequests_Users2">
+  <Association Name="FK_UserRequests_RequestedUser">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="UserRequests" Type="Self.UserRequests" Multiplicity="*" />
     <ReferentialConstraint>
@@ -130,6 +118,18 @@
       </Principal>
       <Dependent Role="UserRequests">
         <PropertyRef Name="RequestedUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRequests_RequestingUser">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="UserRequests" Type="Self.UserRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRequests">
+        <PropertyRef Name="RequestingUserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -168,11 +168,11 @@
       <End Role="Walkers" EntitySet="Walkers" />
       <End Role="Trips" EntitySet="Trips" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserRequests_Users1" Association="Self.FK_UserRequests_Users1">
+    <AssociationSet Name="FK_UserRequests_RequestedUser" Association="Self.FK_UserRequests_RequestedUser">
       <End Role="Users" EntitySet="Users" />
       <End Role="UserRequests" EntitySet="UserRequests" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserRequests_Users2" Association="Self.FK_UserRequests_Users2">
+    <AssociationSet Name="FK_UserRequests_RequestingUser" Association="Self.FK_UserRequests_RequestingUser">
       <End Role="Users" EntitySet="Users" />
       <End Role="UserRequests" EntitySet="UserRequests" />
     </AssociationSet>

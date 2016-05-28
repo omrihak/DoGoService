@@ -32,21 +32,21 @@ namespace DoGoService.Paths
             var dogUserIds = walks.Select(walk => walk.UserId);
 
             var availabilityTimes = (from av in db.AvailabilityTimes
-                                     where dogUserIds.Contains(av.UserId)
+                                     where dogUserIds.Contains(av.userId)
                                      select av).ToList();
-            var usersWithDogs = db.Users.Where(dog => dogUserIds.Contains(dog.Id));
+            var usersWithDogs = db.Users.Where(dog => dogUserIds.Contains(dog.id));
             walks.ForEach(walk =>
             {
-                var avTimes = availabilityTimes.Where(t => t.UserId == walk.UserId).ToList();
-                avTimes.Sort((a, b) => a.StartTime.CompareTo(b.StartTime));
-                var earliestPickup = avTimes.First().StartTime;
-                avTimes.Sort((a, b) => a.EndTime.CompareTo(b.EndTime));
-                var latestPickup = avTimes.Last().EndTime;
-                var userToAdd = usersWithDogs.First(user => user.Id == walk.UserId);
+                var avTimes = availabilityTimes.Where(t => t.userId == walk.UserId).ToList();
+                avTimes.Sort((a, b) => a.startTime.CompareTo(b.startTime));
+                var earliestPickup = avTimes.First().startTime;
+                avTimes.Sort((a, b) => a.endTime.CompareTo(b.endTime));
+                var latestPickup = avTimes.Last().endTime;
+                var userToAdd = usersWithDogs.First(user => user.id == walk.UserId);
 
                 dogWalkDetails.Add(new DogWalkDetails()
                 {
-                    Address = userToAdd.Address + " " + userToAdd.City,
+                    Address = userToAdd.address + " " + userToAdd.city,
                     EarliestPickup = earliestPickup,
                     LatestPickup = latestPickup,
                     TimeOfWalk = walk.Duration * 60

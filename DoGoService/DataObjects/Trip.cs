@@ -14,11 +14,11 @@ namespace DoGoService.DataObjects
     
     public partial class Trip
     {
-        public int Id { get; set; }
-        public int WalkerId { get; set; }
-        public Nullable<int> OwnerId { get; set; }
-        public Nullable<System.TimeSpan> StartTime { get; set; }
-        public Nullable<System.TimeSpan> EndTime { get; set; }
-        public Nullable<bool> Paid { get; set; }
+        public int id { get; set; }
+        public int walkerId { get; set; }
+        public Nullable<int> ownerId { get; set; }
+        public Nullable<System.TimeSpan> startTime { get; set; }
+        public Nullable<System.TimeSpan> endTime { get; set; }
+        public Nullable<bool> paid { get; set; }
     }
 }

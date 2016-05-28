@@ -45,7 +45,7 @@ namespace DoGoService.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != walker.UserId)
+            if (id != walker.userId)
             {
                 return BadRequest();
             }
@@ -88,7 +88,7 @@ namespace DoGoService.Controllers
             }
             catch (DbUpdateException)
             {
-                if (WalkerExists(walker.UserId))
+                if (WalkerExists(walker.userId))
                 {
                     return Conflict();
                 }
@@ -98,7 +98,7 @@ namespace DoGoService.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = walker.UserId }, walker);
+            return CreatedAtRoute("DefaultApi", new { id = walker.userId }, walker);
         }
 
         // DELETE: api/Walkers/5
@@ -128,7 +128,7 @@ namespace DoGoService.Controllers
 
         private bool WalkerExists(int id)
         {
-            return db.Walkers.Count(e => e.UserId == id) > 0;
+            return db.Walkers.Count(e => e.userId == id) > 0;
         }
     }
 }

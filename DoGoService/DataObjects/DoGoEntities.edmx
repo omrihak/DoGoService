@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DogoDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DogoDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AvailabilityTimes">
           <Key>
             <PropertyRef Name="UserId" />
@@ -114,19 +114,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserRequests_Users1">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="UserRequests" Type="Self.UserRequests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="UserRequests">
-              <PropertyRef Name="RequestingUserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserRequests_Users2">
+        <Association Name="FK_UserRequests_RequestedUser">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="UserRequests" Type="Self.UserRequests" Multiplicity="*" />
           <ReferentialConstraint>
@@ -135,6 +123,18 @@
             </Principal>
             <Dependent Role="UserRequests">
               <PropertyRef Name="RequestedUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRequests_RequestingUser">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="UserRequests" Type="Self.UserRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRequests">
+              <PropertyRef Name="RequestingUserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -173,11 +173,11 @@
             <End Role="Walkers" EntitySet="Walkers" />
             <End Role="Trips" EntitySet="Trips" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserRequests_Users1" Association="Self.FK_UserRequests_Users1">
+          <AssociationSet Name="FK_UserRequests_RequestedUser" Association="Self.FK_UserRequests_RequestedUser">
             <End Role="Users" EntitySet="Users" />
             <End Role="UserRequests" EntitySet="UserRequests" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserRequests_Users2" Association="Self.FK_UserRequests_Users2">
+          <AssociationSet Name="FK_UserRequests_RequestingUser" Association="Self.FK_UserRequests_RequestingUser">
             <End Role="Users" EntitySet="Users" />
             <End Role="UserRequests" EntitySet="UserRequests" />
           </AssociationSet>
@@ -186,90 +186,89 @@
             <End Role="Walkers" EntitySet="Walkers" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DogoDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AvailabilityTime">
           <Key>
-            <PropertyRef Name="UserId" />
-            <PropertyRef Name="StartTime" />
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="startTime" />
           </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="startTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="endTime" Type="Time" Nullable="false" Precision="7" />
         </EntityType>
         <EntityType Name="Dog">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="Size" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="size" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Trip">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="WalkerId" Type="Int32" Nullable="false" />
-          <Property Name="OwnerId" Type="Int32" />
-          <Property Name="StartTime" Type="Time" Precision="7" />
-          <Property Name="EndTime" Type="Time" Precision="7" />
-          <Property Name="Paid" Type="Boolean" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="walkerId" Type="Int32" Nullable="false" />
+          <Property Name="ownerId" Type="Int32" />
+          <Property Name="startTime" Type="Time" Precision="7" />
+          <Property Name="endTime" Type="Time" Precision="7" />
+          <Property Name="paid" Type="Boolean" />
         </EntityType>
         <EntityType Name="UserRequest">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="RequestingUserId" Type="Int32" />
-          <Property Name="RequestedUserId" Type="Int32" />
-          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_UserRequests_Users1" FromRole="UserRequests" ToRole="Users" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_UserRequests_Users2" FromRole="UserRequests" ToRole="Users" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="requestingUserId" Type="Int32" />
+          <Property Name="requestedUserId" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="requestingUser" Relationship="Self.FK_UserRequests_Users1" FromRole="UserRequests" ToRole="Users" />
+          <NavigationProperty Name="requestedUser" Relationship="Self.FK_UserRequests_Users2" FromRole="UserRequests" ToRole="Users" />
         </EntityType>
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Address" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IsWalker" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="AvailabilityTimes" Relationship="Self.FK_AvailabilityTimes_ToTable" FromRole="Users" ToRole="AvailabilityTimes" />
-          <NavigationProperty Name="Dogs" Relationship="Self.FK_Dogs_ToTable" FromRole="Users" ToRole="Dogs" />
-          <NavigationProperty Name="Trips" Relationship="Self.FK_Trips_ToUsers" FromRole="Users" ToRole="Trips" />
-          <NavigationProperty Name="UserRequests" Relationship="Self.FK_UserRequests_Users1" FromRole="Users" ToRole="UserRequests" />
-          <NavigationProperty Name="UserRequests1" Relationship="Self.FK_UserRequests_Users2" FromRole="Users" ToRole="UserRequests" />
-          <NavigationProperty Name="Walker" Relationship="Self.FK_Walkers_ToUsers" FromRole="Users" ToRole="Walkers" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isWalker" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="availabilityTimes" Relationship="Self.FK_AvailabilityTimes_ToTable" FromRole="Users" ToRole="AvailabilityTimes" />
+          <NavigationProperty Name="dogs" Relationship="Self.FK_Dogs_ToTable" FromRole="Users" ToRole="Dogs" />
+          <NavigationProperty Name="trips" Relationship="Self.FK_Trips_ToUsers" FromRole="Users" ToRole="Trips" />
+          <NavigationProperty Name="requestsSent" Relationship="Self.FK_UserRequests_Users1" FromRole="Users" ToRole="UserRequests" />
+          <NavigationProperty Name="requestsRecieved" Relationship="Self.FK_UserRequests_Users2" FromRole="Users" ToRole="UserRequests" />
+          <NavigationProperty Name="walker" Relationship="Self.FK_Walkers_ToUsers" FromRole="Users" ToRole="Walkers" />
         </EntityType>
         <EntityType Name="Walker">
           <Key>
-            <PropertyRef Name="UserId" />
+            <PropertyRef Name="userId" />
           </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="HourlyFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="Trips" Relationship="Self.FK_Trips_ToWalkers" FromRole="Walkers" ToRole="Trips" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="hourlyFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="trips" Relationship="Self.FK_Trips_ToWalkers" FromRole="Walkers" ToRole="Trips" />
         </EntityType>
         <Association Name="FK_AvailabilityTimes_ToTable">
           <End Role="Users" Type="Self.User" Multiplicity="1" />
           <End Role="AvailabilityTimes" Type="Self.AvailabilityTime" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="AvailabilityTimes">
-              <PropertyRef Name="UserId" />
+              <PropertyRef Name="userId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -278,10 +277,10 @@
           <End Role="Dogs" Type="Self.Dog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Dogs">
-              <PropertyRef Name="UserId" />
+              <PropertyRef Name="userId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -290,10 +289,10 @@
           <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Trips">
-              <PropertyRef Name="OwnerId" />
+              <PropertyRef Name="ownerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -302,10 +301,10 @@
           <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Walkers">
-              <PropertyRef Name="UserId" />
+              <PropertyRef Name="userId" />
             </Principal>
             <Dependent Role="Trips">
-              <PropertyRef Name="WalkerId" />
+              <PropertyRef Name="walkerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -314,10 +313,10 @@
           <End Role="UserRequests" Type="Self.UserRequest" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="UserRequests">
-              <PropertyRef Name="RequestingUserId" />
+              <PropertyRef Name="requestingUserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -326,10 +325,10 @@
           <End Role="UserRequests" Type="Self.UserRequest" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="UserRequests">
-              <PropertyRef Name="RequestedUserId" />
+              <PropertyRef Name="requestedUserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -338,10 +337,10 @@
           <End Role="Walkers" Type="Self.Walker" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Walkers">
-              <PropertyRef Name="UserId" />
+              <PropertyRef Name="userId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -390,66 +389,66 @@
           <EntitySetMapping Name="AvailabilityTimes">
             <EntityTypeMapping TypeName="DogoDbModel.AvailabilityTime">
               <MappingFragment StoreEntitySet="AvailabilityTimes">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="userId" ColumnName="UserId" />
+                <ScalarProperty Name="startTime" ColumnName="StartTime" />
+                <ScalarProperty Name="endTime" ColumnName="EndTime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Dogs">
             <EntityTypeMapping TypeName="DogoDbModel.Dog">
               <MappingFragment StoreEntitySet="Dogs">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="Name" />
+                <ScalarProperty Name="age" ColumnName="Age" />
+                <ScalarProperty Name="size" ColumnName="Size" />
+                <ScalarProperty Name="userId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Trips">
             <EntityTypeMapping TypeName="DogoDbModel.Trip">
               <MappingFragment StoreEntitySet="Trips">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="WalkerId" ColumnName="WalkerId" />
-                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="id" ColumnName="Id" />
+                <ScalarProperty Name="walkerId" ColumnName="WalkerId" />
+                <ScalarProperty Name="ownerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="startTime" ColumnName="StartTime" />
+                <ScalarProperty Name="endTime" ColumnName="EndTime" />
+                <ScalarProperty Name="paid" ColumnName="Paid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserRequests">
             <EntityTypeMapping TypeName="DogoDbModel.UserRequest">
               <MappingFragment StoreEntitySet="UserRequests">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="RequestingUserId" ColumnName="RequestingUserId" />
-                <ScalarProperty Name="RequestedUserId" ColumnName="RequestedUserId" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="id" ColumnName="Id" />
+                <ScalarProperty Name="requestingUserId" ColumnName="RequestingUserId" />
+                <ScalarProperty Name="requestedUserId" ColumnName="RequestedUserId" />
+                <ScalarProperty Name="status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="DogoDbModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="IsWalker" ColumnName="IsWalker" />
+                <ScalarProperty Name="id" ColumnName="Id" />
+                <ScalarProperty Name="address" ColumnName="Address" />
+                <ScalarProperty Name="userName" ColumnName="UserName" />
+                <ScalarProperty Name="password" ColumnName="Password" />
+                <ScalarProperty Name="firstName" ColumnName="FirstName" />
+                <ScalarProperty Name="lastName" ColumnName="LastName" />
+                <ScalarProperty Name="phoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="city" ColumnName="City" />
+                <ScalarProperty Name="isWalker" ColumnName="IsWalker" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Walkers">
             <EntityTypeMapping TypeName="DogoDbModel.Walker">
               <MappingFragment StoreEntitySet="Walkers">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="HourlyFee" ColumnName="HourlyFee" />
+                <ScalarProperty Name="userId" ColumnName="UserId" />
+                <ScalarProperty Name="age" ColumnName="Age" />
+                <ScalarProperty Name="hourlyFee" ColumnName="HourlyFee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

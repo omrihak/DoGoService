@@ -14,8 +14,8 @@ namespace DoGoService.DataObjects
     
     public partial class AvailabilityTime
     {
-        public int UserId { get; set; }
-        public System.TimeSpan StartTime { get; set; }
-        public System.TimeSpan EndTime { get; set; }
+        public int userId { get; set; }
+        public System.TimeSpan startTime { get; set; }
+        public System.TimeSpan endTime { get; set; }
     }
 }

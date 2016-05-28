@@ -554,8 +554,8 @@ C:\DoGoService\DoGoService\bin\zh-Hant\System.Spatial.resources.dll
 C:\DoGoService\DoGoService\obj\Debug\DoGoService.csprojResolveAssemblyReference.cache
 C:\DoGoService\DoGoService\obj\Debug\DoGoService.dll
 C:\DoGoService\DoGoService\obj\Debug\DoGoService.pdb
-C:\Users\user\Documents\DoGoService\DoGoService\bin\ApplicationInsights.config
 C:\Users\user\Documents\DoGoService\DoGoService\bin\AutoMapper.Net4.dll
+C:\Users\user\Documents\DoGoService\DoGoService\bin\ApplicationInsights.config
 C:\Users\user\Documents\DoGoService\DoGoService\bin\DoGoService.dll.config
 C:\Users\user\Documents\DoGoService\DoGoService\bin\DoGoService.dll
 C:\Users\user\Documents\DoGoService\DoGoService\bin\DoGoService.pdb
@@ -691,6 +691,5 @@ C:\Users\user\Documents\DoGoService\DoGoService\bin\ko\System.Spatial.resources.
 C:\Users\user\Documents\DoGoService\DoGoService\bin\ru\System.Spatial.resources.dll
 C:\Users\user\Documents\DoGoService\DoGoService\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\user\Documents\DoGoService\DoGoService\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\user\Documents\DoGoService\DoGoService\obj\Debug\DoGoService.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\DoGoService\DoGoService\obj\Debug\DoGoService.dll
 C:\Users\user\Documents\DoGoService\DoGoService\obj\Debug\DoGoService.pdb

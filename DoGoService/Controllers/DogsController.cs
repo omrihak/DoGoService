@@ -45,7 +45,7 @@ namespace DoGoService.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != dog.Id)
+            if (id != dog.id)
             {
                 return BadRequest();
             }
@@ -88,7 +88,7 @@ namespace DoGoService.Controllers
             }
             catch (DbUpdateException)
             {
-                if (DogExists(dog.Id))
+                if (DogExists(dog.id))
                 {
                     return Conflict();
                 }
@@ -98,7 +98,7 @@ namespace DoGoService.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = dog.Id }, dog);
+            return CreatedAtRoute("DefaultApi", new { id = dog.id }, dog);
         }
 
         // DELETE: api/Dogs/5
@@ -128,7 +128,7 @@ namespace DoGoService.Controllers
 
         private bool DogExists(int id)
         {
-            return db.Dogs.Count(e => e.Id == id) > 0;
+            return db.Dogs.Count(e => e.id == id) > 0;
         }
     }
 }

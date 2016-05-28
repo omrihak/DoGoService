@@ -45,7 +45,7 @@ namespace DoGoService.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != trip.Id)
+            if (id != trip.id)
             {
                 return BadRequest();
             }
@@ -88,7 +88,7 @@ namespace DoGoService.Controllers
             }
             catch (DbUpdateException)
             {
-                if (TripExists(trip.Id))
+                if (TripExists(trip.id))
                 {
                     return Conflict();
                 }
@@ -98,7 +98,7 @@ namespace DoGoService.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = trip.Id }, trip);
+            return CreatedAtRoute("DefaultApi", new { id = trip.id }, trip);
         }
 
         // DELETE: api/Trips/5
@@ -128,7 +128,7 @@ namespace DoGoService.Controllers
 
         private bool TripExists(int id)
         {
-            return db.Trips.Count(e => e.Id == id) > 0;
+            return db.Trips.Count(e => e.id == id) > 0;
         }
     }
 }
