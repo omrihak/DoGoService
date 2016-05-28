@@ -17,10 +17,6 @@ namespace DoGoService.Controllers
         [ResponseType(typeof(WalkerPath))]
         public IHttpActionResult PostPath(WalkRequest dogData)
         {
-            dogData.DogWalks[0].UserId = 1;
-            dogData.DogWalks[0].Duration = 45;
-            dogData.DogWalks[1].UserId = 2;
-            dogData.DogWalks[1].Duration = 45;
             return Ok(AlgorithmManager.DoAlgorithm(dogData.StartingLocation, dogData.DogWalks));
         }
     }
