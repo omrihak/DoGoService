@@ -10,6 +10,7 @@ using System.Web.Http.Description;
 
 namespace DoGoService.Controllers
 {
+    [AllowAnonymous]
     public class PathsController : ApiController
     {
 
