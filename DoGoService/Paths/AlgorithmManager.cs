@@ -1,5 +1,4 @@
 ﻿using DoGoService.Paths.Models;
-using DoGoService.DataObjects;
 using Google.Maps;
 using Google.Maps.DistanceMatrix;
 using System;
@@ -14,50 +13,51 @@ namespace DoGoService.Paths
 {
     public class AlgorithmManager
     {
-        private static DogoDbEntities db;
+        //private static DogoDbEntities db;
 
         public static void init()
         {
-            if (db == null)
-            {
-                //db = new DogoDbEntities();
-                GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyATaHv7YbpgtLoWL43P8hDjrcH30H8gyNI"));
-            }
+            //if (db == null)
+            //{
+            //    //db = new DogoDbEntities();
+            //    GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyATaHv7YbpgtLoWL43P8hDjrcH30H8gyNI"));
+            //}
         }
 
         public static WalkerPath DoAlgorithm(string homeLocation, List<DogWalk> walks)
         {
-            init();
-            var dogWalkDetails = new List<DogWalkDetails>();
-            var dogUserIds = walks.Select(walk => walk.UserId);
+            //init();
+            //var dogWalkDetails = new List<DogWalkDetails>();
+            //var dogUserIds = walks.Select(walk => walk.UserId);
 
-            var availabilityTimes = (from av in db.AvailabilityTimes
-                                     where dogUserIds.Contains(av.userId)
-                                     select av).ToList();
-            var usersWithDogs = db.Users.Where(dog => dogUserIds.Contains(dog.id));
-            walks.ForEach(walk =>
-            {
-                var avTimes = availabilityTimes.Where(t => t.userId == walk.UserId).ToList();
-                avTimes.Sort((a, b) => a.startTime.CompareTo(b.startTime));
-                var earliestPickup = avTimes.First().startTime;
-                avTimes.Sort((a, b) => a.endTime.CompareTo(b.endTime));
-                var latestPickup = avTimes.Last().endTime;
-                var userToAdd = usersWithDogs.First(user => user.id == walk.UserId);
+            //var availabilityTimes = (from av in db.AvailabilityTimes
+            //                         where dogUserIds.Contains(av.userId)
+            //                         select av).ToList();
+            //var usersWithDogs = db.Users.Where(dog => dogUserIds.Contains(dog.id));
+            //walks.ForEach(walk =>
+            //{
+            //    var avTimes = availabilityTimes.Where(t => t.userId == walk.UserId).ToList();
+            //    avTimes.Sort((a, b) => a.startTime.CompareTo(b.startTime));
+            //    var earliestPickup = avTimes.First().startTime;
+            //    avTimes.Sort((a, b) => a.endTime.CompareTo(b.endTime));
+            //    var latestPickup = avTimes.Last().endTime;
+            //    var userToAdd = usersWithDogs.First(user => user.id == walk.UserId);
 
-                dogWalkDetails.Add(new DogWalkDetails()
-                {
-                    Address = userToAdd.address + " " + userToAdd.city,
-                    EarliestPickup = earliestPickup,
-                    LatestPickup = latestPickup,
-                    TimeOfWalk = walk.Duration * 60
-                });
-            });
+            //    dogWalkDetails.Add(new DogWalkDetails()
+            //    {
+            //        Address = userToAdd.address + " " + userToAdd.city,
+            //        EarliestPickup = earliestPickup,
+            //        LatestPickup = latestPickup,
+            //        TimeOfWalk = walk.Duration * 60
+            //    });
+            //});
 
-            List<WalkerPathLink> graphLinks;
-            DogoWaypoint dogoHome;
-            List<DogoWaypoint> graphNodes;
-            GetAlgorithmData(homeLocation, dogWalkDetails, out graphNodes, out graphLinks, out dogoHome);
-            return new SmartGreedyAlgorithm().CalculatePath(dogoHome, graphNodes, dogWalkDetails, graphLinks);
+            //List<WalkerPathLink> graphLinks;
+            //DogoWaypoint dogoHome;
+            //List<DogoWaypoint> graphNodes;
+            //GetAlgorithmData(homeLocation, dogWalkDetails, out graphNodes, out graphLinks, out dogoHome);
+            //return new SmartGreedyAlgorithm().CalculatePath(dogoHome, graphNodes, dogWalkDetails, graphLinks);
+            return null;
         }
 
         public static void GetAlgorithmData(string homeLocation, List<DogWalkDetails> dogWalks, out List<DogoWaypoint> graphNodes, out List<WalkerPathLink> graphLinks, out DogoWaypoint dogoHome)

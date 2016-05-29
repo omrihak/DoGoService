@@ -1,62 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DoGoModelsStoreContainer" CdmEntityContainer="DoGoEntities">
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="DoGoModels.User">
-        <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="isDogWalker" ColumnName="isDogWalker" />
-          <ScalarProperty Name="city" ColumnName="city" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
-          <ScalarProperty Name="lastname" ColumnName="lastname" />
-          <ScalarProperty Name="firstname" ColumnName="firstname" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="username" ColumnName="username" />
+  <EntityContainerMapping StorageEntityContainer="DogoDbModelStoreContainer" CdmEntityContainer="DogoDbEntitiesConnection">
+    <EntitySetMapping Name="DogOwners">
+      <EntityTypeMapping TypeName="DogoDbModel.DogOwner">
+        <MappingFragment StoreEntitySet="DogOwners">
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="isComfortable6To8" ColumnName="isComfortable6To8" />
+          <ScalarProperty Name="isComfortable8To10" ColumnName="isComfortable8To10" />
+          <ScalarProperty Name="isComfortable10To12" ColumnName="isComfortable10To12" />
+          <ScalarProperty Name="isComfortable12To14" ColumnName="isComfortable12To14" />
+          <ScalarProperty Name="isComfortable14To16" ColumnName="isComfortable14To16" />
+          <ScalarProperty Name="isComfortable16To18" ColumnName="isComfortable16To18" />
+          <ScalarProperty Name="isComfortable18To20" ColumnName="isComfortable18To20" />
+          <ScalarProperty Name="isComfortable20To22" ColumnName="isComfortable20To22" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Dogs">
-      <EntityTypeMapping TypeName="DoGoModels.Dog">
+      <EntityTypeMapping TypeName="DogoDbModel.Dog">
         <MappingFragment StoreEntitySet="Dogs">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="age" ColumnName="age" />
           <ScalarProperty Name="size" ColumnName="size" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DogWalkers">
-      <EntityTypeMapping TypeName="DoGoModels.DogWalker">
+      <EntityTypeMapping TypeName="DogoDbModel.DogWalker">
         <MappingFragment StoreEntitySet="DogWalkers">
-          <ScalarProperty Name="workInEvening" ColumnName="workInEvening" />
-          <ScalarProperty Name="workInAfternoon" ColumnName="workInAfternoon" />
-          <ScalarProperty Name="workInMorning" ColumnName="workInMorning" />
-          <ScalarProperty Name="priceForHour" ColumnName="priceForHour" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="isComfortable6To8" ColumnName="isComfortable6To8" />
+          <ScalarProperty Name="isComfortable8To10" ColumnName="isComfortable8To10" />
+          <ScalarProperty Name="isComfortable10To12" ColumnName="isComfortable10To12" />
+          <ScalarProperty Name="isComfortable12To14" ColumnName="isComfortable12To14" />
+          <ScalarProperty Name="isComfortable14To16" ColumnName="isComfortable14To16" />
+          <ScalarProperty Name="isComfortable16To18" ColumnName="isComfortable16To18" />
+          <ScalarProperty Name="isComfortable18To20" ColumnName="isComfortable18To20" />
+          <ScalarProperty Name="isComfortable20To22" ColumnName="isComfortable20To22" />
           <ScalarProperty Name="age" ColumnName="age" />
-          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="priceForHour" ColumnName="priceForHour" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Trips">
-      <EntityTypeMapping TypeName="DoGoModels.Trip">
+      <EntityTypeMapping TypeName="DogoDbModel.Trip">
         <MappingFragment StoreEntitySet="Trips">
-          <ScalarProperty Name="isPaid" ColumnName="isPaid" />
+          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="dogOwnerId" ColumnName="dogOwnerId" />
           <ScalarProperty Name="dogWalkerId" ColumnName="dogWalkerId" />
-          <ScalarProperty Name="endOfWalking" ColumnName="endOfWalking" />
           <ScalarProperty Name="startOfWalking" ColumnName="startOfWalking" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="endOfWalking" ColumnName="endOfWalking" />
+          <ScalarProperty Name="isPaid" ColumnName="isPaid" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UserRequests">
-      <EntityTypeMapping TypeName="DoGoModels.UserRequest">
+      <EntityTypeMapping TypeName="DogoDbModel.UserRequest">
         <MappingFragment StoreEntitySet="UserRequests">
-          <ScalarProperty Name="isOwnerAskedWalker" ColumnName="isOwnerAskedWalker" />
-          <ScalarProperty Name="requestStatus" ColumnName="requestStatus" />
-          <ScalarProperty Name="requestedUser" ColumnName="requestedUser" />
-          <ScalarProperty Name="requestingUserId" ColumnName="requestingUserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RequestingUserId" ColumnName="RequestingUserId" />
+          <ScalarProperty Name="RequestedUserId" ColumnName="RequestedUserId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

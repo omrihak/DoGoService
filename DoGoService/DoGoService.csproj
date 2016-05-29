@@ -252,35 +252,40 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\DogOwnersController.cs" />
+    <Compile Include="Controllers\DogsController.cs" />
+    <Compile Include="Controllers\DogWalkersController.cs" />
+    <Compile Include="Controllers\TripsController.cs" />
+    <Compile Include="Controllers\UserRequestsController.cs" />
     <Compile Include="DataObjects\Dog.cs">
-      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+      <DependentUpon>DoGoModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataObjects\DogoEntitiesModel.Context.cs">
+    <Compile Include="DataObjects\DoGoModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DogoEntitiesModel.Context.tt</DependentUpon>
+      <DependentUpon>DoGoModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataObjects\DogoEntitiesModel.cs">
+    <Compile Include="DataObjects\DoGoModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+      <DependentUpon>DoGoModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataObjects\DogoEntitiesModel.Designer.cs">
+    <Compile Include="DataObjects\DoGoModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DogoEntitiesModel.edmx</DependentUpon>
+      <DependentUpon>DoGoModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataObjects\DogOwner.cs">
-      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+      <DependentUpon>DoGoModels.tt</DependentUpon>
     </Compile>
     <Compile Include="DataObjects\DogWalker.cs">
-      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+      <DependentUpon>DoGoModels.tt</DependentUpon>
     </Compile>
     <Compile Include="DataObjects\Trip.cs">
-      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+      <DependentUpon>DoGoModels.tt</DependentUpon>
     </Compile>
     <Compile Include="DataObjects\UserRequest.cs">
-      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+      <DependentUpon>DoGoModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Paths\Models\WalkerPath.cs" />
     <Compile Include="Paths\Enums\NodeAction.cs" />
@@ -302,15 +307,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataObjects\DogoEntitiesModel.Context.tt">
+    <Content Include="DataObjects\DoGoModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DogoEntitiesModel.edmx</DependentUpon>
-      <LastGenOutput>DogoEntitiesModel.Context.cs</LastGenOutput>
+      <DependentUpon>DoGoModels.edmx</DependentUpon>
+      <LastGenOutput>DoGoModels.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataObjects\DogoEntitiesModel.tt">
+    <Content Include="DataObjects\DoGoModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DogoEntitiesModel.edmx</DependentUpon>
-      <LastGenOutput>DogoEntitiesModel.cs</LastGenOutput>
+      <DependentUpon>DoGoModels.edmx</DependentUpon>
+      <LastGenOutput>DoGoModels.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -327,7 +332,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -350,14 +354,14 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="DataObjects\DogoEntitiesModel.edmx">
+    <EntityDeploy Include="DataObjects\DoGoModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DogoEntitiesModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DoGoModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataObjects\DogoEntitiesModel.edmx.diagram">
-      <DependentUpon>DogoEntitiesModel.edmx</DependentUpon>
+    <Content Include="DataObjects\DoGoModels.edmx.diagram">
+      <DependentUpon>DoGoModels.edmx</DependentUpon>
     </Content>
   </ItemGroup>
   <PropertyGroup>

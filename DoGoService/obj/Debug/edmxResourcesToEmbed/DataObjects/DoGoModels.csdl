@@ -1,134 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DoGoModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="DoGoEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Users" EntityType="DoGoModels.User" />
-    <EntitySet Name="Dogs" EntityType="DoGoModels.Dog" />
-    <EntitySet Name="DogWalkers" EntityType="DoGoModels.DogWalker" />
-    <EntitySet Name="Trips" EntityType="DoGoModels.Trip" />
-    <EntitySet Name="UserRequests" EntityType="DoGoModels.UserRequest" />
-    <AssociationSet Name="FK_dogWalkers_users" Association="DoGoModels.FK_dogWalkers_users">
-      <End Role="User" EntitySet="Users" />
-      <End Role="DogWalker" EntitySet="DogWalkers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_trips_users" Association="DoGoModels.FK_trips_users">
-      <End Role="User" EntitySet="Users" />
-      <End Role="Trip" EntitySet="Trips" />
-    </AssociationSet>
-    <AssociationSet Name="FK_trips_users1" Association="DoGoModels.FK_trips_users1">
-      <End Role="User" EntitySet="Users" />
-      <End Role="Trip" EntitySet="Trips" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="User">
+<Schema Namespace="DogoDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DogOwner">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="firstname" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="lastname" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="phoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="address" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="city" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="isDogWalker" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="DogWalkers" Relationship="DoGoModels.FK_dogWalkers_users" FromRole="User" ToRole="DogWalker" />
-    <NavigationProperty Name="Trips" Relationship="DoGoModels.FK_trips_users" FromRole="User" ToRole="Trip" />
-    <NavigationProperty Name="Trips1" Relationship="DoGoModels.FK_trips_users1" FromRole="User" ToRole="Trip" />
+    <Property Name="userName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isComfortable6To8" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable8To10" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable10To12" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable12To14" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable14To16" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable16To18" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable18To20" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable20To22" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Dog">
     <Key>
-      <PropertyRef Name="id" />
-      <PropertyRef Name="name" />
-      <PropertyRef Name="size" />
-      <PropertyRef Name="age" />
+      <PropertyRef Name="userId" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="size" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="size" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="DogWalker">
     <Key>
-      <PropertyRef Name="userId" />
-      <PropertyRef Name="age" />
-      <PropertyRef Name="priceForHour" />
-      <PropertyRef Name="workInMorning" />
-      <PropertyRef Name="workInAfternoon" />
-      <PropertyRef Name="workInEvening" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isComfortable6To8" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable8To10" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable10To12" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable12To14" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable14To16" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable16To18" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable18To20" Type="Boolean" Nullable="false" />
+    <Property Name="isComfortable20To22" Type="Boolean" Nullable="false" />
     <Property Name="age" Type="Int32" Nullable="false" />
     <Property Name="priceForHour" Type="Int32" Nullable="false" />
-    <Property Name="workInMorning" Type="Boolean" Nullable="false" />
-    <Property Name="workInAfternoon" Type="Boolean" Nullable="false" />
-    <Property Name="workInEvening" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="DoGoModels.FK_dogWalkers_users" FromRole="DogWalker" ToRole="User" />
   </EntityType>
   <EntityType Name="Trip">
     <Key>
       <PropertyRef Name="id" />
-      <PropertyRef Name="startOfWalking" />
-      <PropertyRef Name="endOfWalking" />
-      <PropertyRef Name="dogWalkerId" />
-      <PropertyRef Name="dogOwnerId" />
-      <PropertyRef Name="isPaid" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="startOfWalking" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="endOfWalking" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="dogWalkerId" Type="Int32" Nullable="false" />
     <Property Name="dogOwnerId" Type="Int32" Nullable="false" />
+    <Property Name="dogWalkerId" Type="Int32" Nullable="false" />
+    <Property Name="startOfWalking" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="endOfWalking" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="isPaid" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="DoGoModels.FK_trips_users" FromRole="Trip" ToRole="User" />
-    <NavigationProperty Name="User1" Relationship="DoGoModels.FK_trips_users1" FromRole="Trip" ToRole="User" />
   </EntityType>
   <EntityType Name="UserRequest">
     <Key>
-      <PropertyRef Name="requestingUserId" />
-      <PropertyRef Name="requestedUser" />
-      <PropertyRef Name="requestStatus" />
-      <PropertyRef Name="isOwnerAskedWalker" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="requestingUserId" Type="Int32" Nullable="false" />
-    <Property Name="requestedUser" Type="Int32" Nullable="false" />
-    <Property Name="requestStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="isOwnerAskedWalker" Type="Boolean" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RequestingUserId" Type="Int32" />
+    <Property Name="RequestedUserId" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <Association Name="FK_dogWalkers_users">
-    <End Type="DoGoModels.User" Role="User" Multiplicity="1" />
-    <End Type="DoGoModels.DogWalker" Role="DogWalker" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="DogWalker">
-        <PropertyRef Name="userId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_trips_users">
-    <End Type="DoGoModels.User" Role="User" Multiplicity="1" />
-    <End Type="DoGoModels.Trip" Role="Trip" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Trip">
-        <PropertyRef Name="dogWalkerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_trips_users1">
-    <End Type="DoGoModels.User" Role="User" Multiplicity="1" />
-    <End Type="DoGoModels.Trip" Role="Trip" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Trip">
-        <PropertyRef Name="dogOwnerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <EntityContainer Name="DogoDbEntitiesConnection" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DogOwners" EntityType="Self.DogOwner" />
+    <EntitySet Name="Dogs" EntityType="Self.Dog" />
+    <EntitySet Name="DogWalkers" EntityType="Self.DogWalker" />
+    <EntitySet Name="Trips" EntityType="Self.Trip" />
+    <EntitySet Name="UserRequests" EntityType="Self.UserRequest" />
+  </EntityContainer>
 </Schema>

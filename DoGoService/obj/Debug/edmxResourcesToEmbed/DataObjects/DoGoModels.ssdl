@@ -1,168 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DoGoModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'dogo.dbo.Dogs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Dogs">
+<Schema Namespace="DogoDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DogOwners">
     <Key>
       <PropertyRef Name="id" />
-      <PropertyRef Name="name" />
-      <PropertyRef Name="size" />
-      <PropertyRef Name="age" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="name" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="size" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="userName" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="isComfortable6To8" Type="bit" Nullable="false" />
+    <Property Name="isComfortable8To10" Type="bit" Nullable="false" />
+    <Property Name="isComfortable10To12" Type="bit" Nullable="false" />
+    <Property Name="isComfortable12To14" Type="bit" Nullable="false" />
+    <Property Name="isComfortable14To16" Type="bit" Nullable="false" />
+    <Property Name="isComfortable16To18" Type="bit" Nullable="false" />
+    <Property Name="isComfortable18To20" Type="bit" Nullable="false" />
+    <Property Name="isComfortable20To22" Type="bit" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'dogo.dbo.DogWalkers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="DogWalkers">
+  <EntityType Name="Dogs">
     <Key>
       <PropertyRef Name="userId" />
-      <PropertyRef Name="age" />
-      <PropertyRef Name="priceForHour" />
-      <PropertyRef Name="workInMorning" />
-      <PropertyRef Name="workInAfternoon" />
-      <PropertyRef Name="workInEvening" />
     </Key>
     <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="size" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DogWalkers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="userName" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="isComfortable6To8" Type="bit" Nullable="false" />
+    <Property Name="isComfortable8To10" Type="bit" Nullable="false" />
+    <Property Name="isComfortable10To12" Type="bit" Nullable="false" />
+    <Property Name="isComfortable12To14" Type="bit" Nullable="false" />
+    <Property Name="isComfortable14To16" Type="bit" Nullable="false" />
+    <Property Name="isComfortable16To18" Type="bit" Nullable="false" />
+    <Property Name="isComfortable18To20" Type="bit" Nullable="false" />
+    <Property Name="isComfortable20To22" Type="bit" Nullable="false" />
     <Property Name="age" Type="int" Nullable="false" />
     <Property Name="priceForHour" Type="int" Nullable="false" />
-    <Property Name="workInMorning" Type="bit" Nullable="false" />
-    <Property Name="workInAfternoon" Type="bit" Nullable="false" />
-    <Property Name="workInEvening" Type="bit" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'dogo.dbo.Trips' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Trips">
     <Key>
       <PropertyRef Name="id" />
-      <PropertyRef Name="startOfWalking" />
-      <PropertyRef Name="endOfWalking" />
-      <PropertyRef Name="dogWalkerId" />
-      <PropertyRef Name="dogOwnerId" />
-      <PropertyRef Name="isPaid" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="startOfWalking" Type="datetime" Nullable="false" />
-    <Property Name="endOfWalking" Type="datetime" Nullable="false" />
-    <Property Name="dogWalkerId" Type="int" Nullable="false" />
     <Property Name="dogOwnerId" Type="int" Nullable="false" />
+    <Property Name="dogWalkerId" Type="int" Nullable="false" />
+    <Property Name="startOfWalking" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="endOfWalking" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="isPaid" Type="bit" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'dogo.dbo.UserRequests' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="UserRequests">
     <Key>
-      <PropertyRef Name="requestingUserId" />
-      <PropertyRef Name="requestedUser" />
-      <PropertyRef Name="requestStatus" />
-      <PropertyRef Name="isOwnerAskedWalker" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="requestingUserId" Type="int" Nullable="false" />
-    <Property Name="requestedUser" Type="int" Nullable="false" />
-    <Property Name="requestStatus" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="isOwnerAskedWalker" Type="bit" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="RequestingUserId" Type="int" />
+    <Property Name="RequestedUserId" Type="int" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="password" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="firstname" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="lastname" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="phoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="address" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="city" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="isDogWalker" Type="bit" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_dogWalkers_users">
-    <End Role="Users" Type="Self.Users" Multiplicity="1" />
-    <End Role="DogWalkers" Type="Self.DogWalkers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="DogWalkers">
-        <PropertyRef Name="userId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_trips_users">
-    <End Role="Users" Type="Self.Users" Multiplicity="1" />
-    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Trips">
-        <PropertyRef Name="dogWalkerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_trips_users1">
-    <End Role="Users" Type="Self.Users" Multiplicity="1" />
-    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Trips">
-        <PropertyRef Name="dogOwnerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="DoGoModelsStoreContainer">
-    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Dogs" EntityType="Self.Dogs" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Dogs].[id] AS [id], 
-    [Dogs].[name] AS [name], 
-    [Dogs].[size] AS [size], 
-    [Dogs].[age] AS [age]
-    FROM [dbo].[Dogs] AS [Dogs]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="DogWalkers" EntityType="Self.DogWalkers" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [DogWalkers].[userId] AS [userId], 
-    [DogWalkers].[age] AS [age], 
-    [DogWalkers].[priceForHour] AS [priceForHour], 
-    [DogWalkers].[workInMorning] AS [workInMorning], 
-    [DogWalkers].[workInAfternoon] AS [workInAfternoon], 
-    [DogWalkers].[workInEvening] AS [workInEvening]
-    FROM [dbo].[DogWalkers] AS [DogWalkers]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Trips" EntityType="Self.Trips" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Trips].[id] AS [id], 
-    [Trips].[startOfWalking] AS [startOfWalking], 
-    [Trips].[endOfWalking] AS [endOfWalking], 
-    [Trips].[dogWalkerId] AS [dogWalkerId], 
-    [Trips].[dogOwnerId] AS [dogOwnerId], 
-    [Trips].[isPaid] AS [isPaid]
-    FROM [dbo].[Trips] AS [Trips]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="UserRequests" EntityType="Self.UserRequests" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [UserRequests].[requestingUserId] AS [requestingUserId], 
-    [UserRequests].[requestedUser] AS [requestedUser], 
-    [UserRequests].[requestStatus] AS [requestStatus], 
-    [UserRequests].[isOwnerAskedWalker] AS [isOwnerAskedWalker]
-    FROM [dbo].[UserRequests] AS [UserRequests]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK_dogWalkers_users" Association="Self.FK_dogWalkers_users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="DogWalkers" EntitySet="DogWalkers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_trips_users" Association="Self.FK_trips_users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Trips" EntitySet="Trips" />
-    </AssociationSet>
-    <AssociationSet Name="FK_trips_users1" Association="Self.FK_trips_users1">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Trips" EntitySet="Trips" />
-    </AssociationSet>
+  <EntityContainer Name="DogoDbModelStoreContainer">
+    <EntitySet Name="DogOwners" EntityType="Self.DogOwners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dogs" EntityType="Self.Dogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DogWalkers" EntityType="Self.DogWalkers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trips" EntityType="Self.Trips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRequests" EntityType="Self.UserRequests" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

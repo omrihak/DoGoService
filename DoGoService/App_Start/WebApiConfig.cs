@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Web.Http;
-using DoGoService.DataObjects;
 using DoGoService.Models;
 using Microsoft.WindowsAzure.Mobile.Service;
 
