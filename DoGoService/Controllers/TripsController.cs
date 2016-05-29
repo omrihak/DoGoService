@@ -12,6 +12,7 @@ using DoGoService.DataObjects;
 
 namespace DoGoService.Controllers
 {
+    [AllowAnonymous]
     public class TripsController : ApiController
     {
         private DogoDbEntitiesConnection db = new DogoDbEntitiesConnection();
@@ -22,12 +23,14 @@ namespace DoGoService.Controllers
             var result = db.Trips.ToList();
             if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "walkerId"))
             {
-                result = db.Trips.Where(trip => trip.dogWalkerId.ToString() == Request.GetQueryNameValuePairs().First(pair => pair.Key == "walkerId").Value).ToList();
+                var id = Request.GetQueryNameValuePairs().First(pair => pair.Key == "walkerId").Value;
+                result = db.Trips.Where(trip => trip.dogWalkerId.ToString() == id).ToList();
             }
 
             if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "ownerId"))
             {
-                result = db.Trips.Where(trip => trip.dogOwnerId.ToString() == Request.GetQueryNameValuePairs().First(pair => pair.Key == "ownerId").Value).ToList();
+                var id = Request.GetQueryNameValuePairs().First(pair => pair.Key == "ownerId").Value;
+                result = db.Trips.Where(trip => trip.dogOwnerId.ToString() == id).ToList();
             }
 
             return result.AsQueryable();

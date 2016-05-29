@@ -255,6 +255,7 @@
     <Compile Include="Controllers\DogOwnersController.cs" />
     <Compile Include="Controllers\DogsController.cs" />
     <Compile Include="Controllers\DogWalkersController.cs" />
+    <Compile Include="Controllers\PathsController.cs" />
     <Compile Include="Controllers\TripsController.cs" />
     <Compile Include="Controllers\UserRequestsController.cs" />
     <Compile Include="DataObjects\Dog.cs">

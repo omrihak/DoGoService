@@ -12,6 +12,7 @@ using DoGoService.DataObjects;
 
 namespace DoGoService.Controllers
 {
+    [AllowAnonymous]
     public class DogsController : ApiController
     {
         private DogoDbEntitiesConnection db = new DogoDbEntitiesConnection();

@@ -12,6 +12,7 @@ using DoGoService.DataObjects;
 
 namespace DoGoService.Controllers
 {
+    [AllowAnonymous]
     public class DogOwnersController : ApiController
     {
         private DogoDbEntitiesConnection db = new DogoDbEntitiesConnection();
@@ -22,7 +23,8 @@ namespace DoGoService.Controllers
             var result = db.DogOwners.ToList();
             if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "userName"))
             {
-                result = db.DogOwners.Where(owner => owner.userName == Request.GetQueryNameValuePairs().First(pair => pair.Key == "userName").Value).ToList();
+                var name = Request.GetQueryNameValuePairs().First(pair => pair.Key == "userName").Value;
+                result = db.DogOwners.Where(owner => owner.userName == name).ToList();
             }
 
             if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "connectedTo"))
