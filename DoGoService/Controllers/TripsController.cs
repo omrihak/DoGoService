@@ -19,7 +19,18 @@ namespace DoGoService.Controllers
         // GET: api/Trips
         public IQueryable<Trip> GetTrips()
         {
-            return db.Trips;
+            var result = db.Trips.ToList();
+            if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "walkerId"))
+            {
+                result = db.Trips.Where(trip => trip.dogWalkerId.ToString() == Request.GetQueryNameValuePairs().First(pair => pair.Key == "walkerId").Value).ToList();
+            }
+
+            if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "ownerId"))
+            {
+                result = db.Trips.Where(trip => trip.dogOwnerId.ToString() == Request.GetQueryNameValuePairs().First(pair => pair.Key == "ownerId").Value).ToList();
+            }
+
+            return result.AsQueryable();
         }
 
         // GET: api/Trips/5

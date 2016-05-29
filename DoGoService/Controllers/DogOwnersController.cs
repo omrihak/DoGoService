@@ -19,7 +19,21 @@ namespace DoGoService.Controllers
         // GET: api/DogOwners
         public IQueryable<DogOwner> GetDogOwners()
         {
-            return db.DogOwners;
+            var result = db.DogOwners.ToList();
+            if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "userName"))
+            {
+                result = db.DogOwners.Where(owner => owner.userName == Request.GetQueryNameValuePairs().First(pair => pair.Key == "userName").Value).ToList();
+            }
+
+            if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "connectedTo"))
+            {
+                var walkerId = Request.GetQueryNameValuePairs().First(pair => pair.Key == "connectedTo").Value;
+                result = db.DogOwners.Where(owner => db.UserRequests.Any(request => request.Status == "Accepted"
+                                                                                 && ((request.RequestedUserId.ToString() == walkerId && request.RequestingUserId == owner.id)
+                                                                                 || (request.RequestedUserId == owner.id && request.RequestingUserId.ToString() == walkerId)))).ToList();
+            }
+
+            return result.AsQueryable();
         }
 
         // GET: api/DogOwners/5

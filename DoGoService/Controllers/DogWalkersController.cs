@@ -19,7 +19,13 @@ namespace DoGoService.Controllers
         // GET: api/DogWalkers
         public IQueryable<DogWalker> GetDogWalkers()
         {
-            return db.DogWalkers;
+            var result = db.DogWalkers.ToList();
+            if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "userName"))
+            {
+                result = db.DogWalkers.Where(walker => walker.userName == Request.GetQueryNameValuePairs().First(pair => pair.Key == "userName").Value).ToList();
+            }
+
+            return result.AsQueryable();
         }
 
         // GET: api/DogWalkers/5

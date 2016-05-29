@@ -19,7 +19,19 @@ namespace DoGoService.Controllers
         // GET: api/UserRequests
         public IQueryable<UserRequest> GetUserRequests()
         {
-            return db.UserRequests;
+            var result = db.UserRequests.ToList();
+
+            if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "walkerId"))
+            {
+                result = db.UserRequests.Where(trip => trip.RequestedUserId.ToString() == Request.GetQueryNameValuePairs().First(pair => pair.Key == "walkerId").Value).ToList();
+            }
+
+            if (Request.GetQueryNameValuePairs().Any(pair => pair.Key == "ownerId"))
+            {
+                result = db.UserRequests.Where(trip => trip.RequestedUserId.ToString() == Request.GetQueryNameValuePairs().First(pair => pair.Key == "ownerId").Value).ToList();
+            }
+
+            return result.AsQueryable();
         }
 
         // GET: api/UserRequests/5
