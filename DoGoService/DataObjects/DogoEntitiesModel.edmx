@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DogoDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DogoDb.dbo.DogOwners' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DogOwners">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="userName" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="phoneNumber" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="isComfortable6To8" />
+            <PropertyRef Name="isComfortable8To10" />
+            <PropertyRef Name="isComfortable10To12" />
+            <PropertyRef Name="isComfortable12To14" />
+            <PropertyRef Name="isComfortable14To16" />
+            <PropertyRef Name="isComfortable16To18" />
+            <PropertyRef Name="isComfortable18To20" />
+            <PropertyRef Name="isComfortable20To22" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userName" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isComfortable6To8" Type="bit" Nullable="false" />
+          <Property Name="isComfortable8To10" Type="bit" Nullable="false" />
+          <Property Name="isComfortable10To12" Type="bit" Nullable="false" />
+          <Property Name="isComfortable12To14" Type="bit" Nullable="false" />
+          <Property Name="isComfortable14To16" Type="bit" Nullable="false" />
+          <Property Name="isComfortable16To18" Type="bit" Nullable="false" />
+          <Property Name="isComfortable18To20" Type="bit" Nullable="false" />
+          <Property Name="isComfortable20To22" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DogoDb.dbo.Dogs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Dogs">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="age" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DogoDb.dbo.DogWalkers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DogWalkers">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="userName" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="phoneNumber" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="isComfortable6To8" />
+            <PropertyRef Name="isComfortable8To10" />
+            <PropertyRef Name="isComfortable10To12" />
+            <PropertyRef Name="isComfortable12To14" />
+            <PropertyRef Name="isComfortable14To16" />
+            <PropertyRef Name="isComfortable16To18" />
+            <PropertyRef Name="isComfortable18To20" />
+            <PropertyRef Name="isComfortable20To22" />
+            <PropertyRef Name="age" />
+            <PropertyRef Name="priceForHour" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userName" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isComfortable6To8" Type="bit" Nullable="false" />
+          <Property Name="isComfortable8To10" Type="bit" Nullable="false" />
+          <Property Name="isComfortable10To12" Type="bit" Nullable="false" />
+          <Property Name="isComfortable12To14" Type="bit" Nullable="false" />
+          <Property Name="isComfortable14To16" Type="bit" Nullable="false" />
+          <Property Name="isComfortable16To18" Type="bit" Nullable="false" />
+          <Property Name="isComfortable18To20" Type="bit" Nullable="false" />
+          <Property Name="isComfortable20To22" Type="bit" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="priceForHour" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DogoDb.dbo.Trips' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Trips">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="dogOwnerId" />
+            <PropertyRef Name="dogWalkerId" />
+            <PropertyRef Name="startOfWalking" />
+            <PropertyRef Name="endOfWalking" />
+            <PropertyRef Name="isPaid" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="dogOwnerId" Type="int" Nullable="false" />
+          <Property Name="dogWalkerId" Type="int" Nullable="false" />
+          <Property Name="startOfWalking" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="endOfWalking" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="isPaid" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRequests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="RequestingUserId" Type="int" />
+          <Property Name="RequestedUserId" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DogoDbModelStoreContainer">
+          <EntitySet Name="UserRequests" EntityType="Self.UserRequests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DogOwners" EntityType="Self.DogOwners" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DogOwners].[id] AS [id], 
+    [DogOwners].[userName] AS [userName], 
+    [DogOwners].[password] AS [password], 
+    [DogOwners].[firstName] AS [firstName], 
+    [DogOwners].[lastName] AS [lastName], 
+    [DogOwners].[phoneNumber] AS [phoneNumber], 
+    [DogOwners].[address] AS [address], 
+    [DogOwners].[city] AS [city], 
+    [DogOwners].[isComfortable6To8] AS [isComfortable6To8], 
+    [DogOwners].[isComfortable8To10] AS [isComfortable8To10], 
+    [DogOwners].[isComfortable10To12] AS [isComfortable10To12], 
+    [DogOwners].[isComfortable12To14] AS [isComfortable12To14], 
+    [DogOwners].[isComfortable14To16] AS [isComfortable14To16], 
+    [DogOwners].[isComfortable16To18] AS [isComfortable16To18], 
+    [DogOwners].[isComfortable18To20] AS [isComfortable18To20], 
+    [DogOwners].[isComfortable20To22] AS [isComfortable20To22]
+    FROM [dbo].[DogOwners] AS [DogOwners]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Dogs" EntityType="Self.Dogs" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Dogs].[userId] AS [userId], 
+    [Dogs].[name] AS [name], 
+    [Dogs].[age] AS [age], 
+    [Dogs].[size] AS [size]
+    FROM [dbo].[Dogs] AS [Dogs]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DogWalkers" EntityType="Self.DogWalkers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DogWalkers].[id] AS [id], 
+    [DogWalkers].[userName] AS [userName], 
+    [DogWalkers].[password] AS [password], 
+    [DogWalkers].[firstName] AS [firstName], 
+    [DogWalkers].[lastName] AS [lastName], 
+    [DogWalkers].[phoneNumber] AS [phoneNumber], 
+    [DogWalkers].[address] AS [address], 
+    [DogWalkers].[city] AS [city], 
+    [DogWalkers].[isComfortable6To8] AS [isComfortable6To8], 
+    [DogWalkers].[isComfortable8To10] AS [isComfortable8To10], 
+    [DogWalkers].[isComfortable10To12] AS [isComfortable10To12], 
+    [DogWalkers].[isComfortable12To14] AS [isComfortable12To14], 
+    [DogWalkers].[isComfortable14To16] AS [isComfortable14To16], 
+    [DogWalkers].[isComfortable16To18] AS [isComfortable16To18], 
+    [DogWalkers].[isComfortable18To20] AS [isComfortable18To20], 
+    [DogWalkers].[isComfortable20To22] AS [isComfortable20To22], 
+    [DogWalkers].[age] AS [age], 
+    [DogWalkers].[priceForHour] AS [priceForHour]
+    FROM [dbo].[DogWalkers] AS [DogWalkers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Trips" EntityType="Self.Trips" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Trips].[id] AS [id], 
+    [Trips].[dogOwnerId] AS [dogOwnerId], 
+    [Trips].[dogWalkerId] AS [dogWalkerId], 
+    [Trips].[startOfWalking] AS [startOfWalking], 
+    [Trips].[endOfWalking] AS [endOfWalking], 
+    [Trips].[isPaid] AS [isPaid]
+    FROM [dbo].[Trips] AS [Trips]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DogoDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="UserRequest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="RequestingUserId" Type="Int32" />
+          <Property Name="RequestedUserId" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DogOwner">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="userName" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="phoneNumber" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="isComfortable6To8" />
+            <PropertyRef Name="isComfortable8To10" />
+            <PropertyRef Name="isComfortable10To12" />
+            <PropertyRef Name="isComfortable12To14" />
+            <PropertyRef Name="isComfortable14To16" />
+            <PropertyRef Name="isComfortable16To18" />
+            <PropertyRef Name="isComfortable18To20" />
+            <PropertyRef Name="isComfortable20To22" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isComfortable6To8" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable8To10" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable10To12" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable12To14" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable14To16" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable16To18" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable18To20" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable20To22" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dog">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="age" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="size" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DogWalker">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="userName" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="phoneNumber" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="isComfortable6To8" />
+            <PropertyRef Name="isComfortable8To10" />
+            <PropertyRef Name="isComfortable10To12" />
+            <PropertyRef Name="isComfortable12To14" />
+            <PropertyRef Name="isComfortable14To16" />
+            <PropertyRef Name="isComfortable16To18" />
+            <PropertyRef Name="isComfortable18To20" />
+            <PropertyRef Name="isComfortable20To22" />
+            <PropertyRef Name="age" />
+            <PropertyRef Name="priceForHour" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isComfortable6To8" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable8To10" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable10To12" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable12To14" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable14To16" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable16To18" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable18To20" Type="Boolean" Nullable="false" />
+          <Property Name="isComfortable20To22" Type="Boolean" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="priceForHour" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Trip">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="dogOwnerId" />
+            <PropertyRef Name="dogWalkerId" />
+            <PropertyRef Name="startOfWalking" />
+            <PropertyRef Name="endOfWalking" />
+            <PropertyRef Name="isPaid" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="dogOwnerId" Type="Int32" Nullable="false" />
+          <Property Name="dogWalkerId" Type="Int32" Nullable="false" />
+          <Property Name="startOfWalking" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="endOfWalking" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isPaid" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserRequests" EntityType="Self.UserRequest" />
+          <EntitySet Name="DogOwners" EntityType="Self.DogOwner" />
+          <EntitySet Name="Dogs" EntityType="Self.Dog" />
+          <EntitySet Name="DogWalkers" EntityType="Self.DogWalker" />
+          <EntitySet Name="Trips" EntityType="Self.Trip" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DogoDbModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="UserRequests">
+            <EntityTypeMapping TypeName="DogoDbModel.UserRequest">
+              <MappingFragment StoreEntitySet="UserRequests">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RequestingUserId" ColumnName="RequestingUserId" />
+                <ScalarProperty Name="RequestedUserId" ColumnName="RequestedUserId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DogOwners">
+            <EntityTypeMapping TypeName="DogoDbModel.DogOwner">
+              <MappingFragment StoreEntitySet="DogOwners">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="isComfortable6To8" ColumnName="isComfortable6To8" />
+                <ScalarProperty Name="isComfortable8To10" ColumnName="isComfortable8To10" />
+                <ScalarProperty Name="isComfortable10To12" ColumnName="isComfortable10To12" />
+                <ScalarProperty Name="isComfortable12To14" ColumnName="isComfortable12To14" />
+                <ScalarProperty Name="isComfortable14To16" ColumnName="isComfortable14To16" />
+                <ScalarProperty Name="isComfortable16To18" ColumnName="isComfortable16To18" />
+                <ScalarProperty Name="isComfortable18To20" ColumnName="isComfortable18To20" />
+                <ScalarProperty Name="isComfortable20To22" ColumnName="isComfortable20To22" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dogs">
+            <EntityTypeMapping TypeName="DogoDbModel.Dog">
+              <MappingFragment StoreEntitySet="Dogs">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="size" ColumnName="size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DogWalkers">
+            <EntityTypeMapping TypeName="DogoDbModel.DogWalker">
+              <MappingFragment StoreEntitySet="DogWalkers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="isComfortable6To8" ColumnName="isComfortable6To8" />
+                <ScalarProperty Name="isComfortable8To10" ColumnName="isComfortable8To10" />
+                <ScalarProperty Name="isComfortable10To12" ColumnName="isComfortable10To12" />
+                <ScalarProperty Name="isComfortable12To14" ColumnName="isComfortable12To14" />
+                <ScalarProperty Name="isComfortable14To16" ColumnName="isComfortable14To16" />
+                <ScalarProperty Name="isComfortable16To18" ColumnName="isComfortable16To18" />
+                <ScalarProperty Name="isComfortable18To20" ColumnName="isComfortable18To20" />
+                <ScalarProperty Name="isComfortable20To22" ColumnName="isComfortable20To22" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="priceForHour" ColumnName="priceForHour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trips">
+            <EntityTypeMapping TypeName="DogoDbModel.Trip">
+              <MappingFragment StoreEntitySet="Trips">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="dogOwnerId" ColumnName="dogOwnerId" />
+                <ScalarProperty Name="dogWalkerId" ColumnName="dogWalkerId" />
+                <ScalarProperty Name="startOfWalking" ColumnName="startOfWalking" />
+                <ScalarProperty Name="endOfWalking" ColumnName="endOfWalking" />
+                <ScalarProperty Name="isPaid" ColumnName="isPaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

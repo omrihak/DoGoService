@@ -20,7 +20,7 @@ namespace DoGoService.Paths
         {
             if (db == null)
             {
-                db = new DogoDbEntities();
+                //db = new DogoDbEntities();
                 GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyATaHv7YbpgtLoWL43P8hDjrcH30H8gyNI"));
             }
         }

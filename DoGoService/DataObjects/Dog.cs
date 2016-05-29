@@ -14,9 +14,9 @@ namespace DoGoService.DataObjects
     
     public partial class Dog
     {
-        public int id { get; set; }
+        public int userId { get; set; }
         public string name { get; set; }
-        public Nullable<int> age { get; set; }
+        public int age { get; set; }
         public string size { get; set; }
     }
 }

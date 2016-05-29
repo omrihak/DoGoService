@@ -252,7 +252,36 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\OwnersController.cs" />
+    <Compile Include="DataObjects\Dog.cs">
+      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataObjects\DogoEntitiesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DogoEntitiesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataObjects\DogoEntitiesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataObjects\DogoEntitiesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DogoEntitiesModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataObjects\DogOwner.cs">
+      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataObjects\DogWalker.cs">
+      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataObjects\Trip.cs">
+      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataObjects\UserRequest.cs">
+      <DependentUpon>DogoEntitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Paths\Models\WalkerPath.cs" />
     <Compile Include="Paths\Enums\NodeAction.cs" />
     <Compile Include="Paths\Models\WalkRequest.cs" />
@@ -265,44 +294,6 @@
     <Compile Include="Paths\SmartGreedyAlgorithm.cs" />
     <Compile Include="Paths\Models\WaypointLink.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\PathsController.cs" />
-    <Compile Include="Controllers\DogsController.cs" />
-    <Compile Include="Controllers\TripsController.cs" />
-    <Compile Include="Controllers\UserRequestsController.cs" />
-    <Compile Include="Controllers\WalkersController.cs" />
-    <Compile Include="DataObjects\AvailabilityTime.cs">
-      <DependentUpon>DoGoEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataObjects\Dog.cs">
-      <DependentUpon>DoGoEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataObjects\DoGoEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoGoEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataObjects\DoGoEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoGoEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataObjects\DoGoEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoGoEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DataObjects\Trip.cs">
-      <DependentUpon>DoGoEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataObjects\User.cs">
-      <DependentUpon>DoGoEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataObjects\UserRequest.cs">
-      <DependentUpon>DoGoEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataObjects\Walker.cs">
-      <DependentUpon>DoGoEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
     <Compile Include="Global.asax.cs">
@@ -311,15 +302,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataObjects\DoGoEntities.Context.tt">
+    <Content Include="DataObjects\DogoEntitiesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DoGoEntities.edmx</DependentUpon>
-      <LastGenOutput>DoGoEntities.Context.cs</LastGenOutput>
+      <DependentUpon>DogoEntitiesModel.edmx</DependentUpon>
+      <LastGenOutput>DogoEntitiesModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataObjects\DoGoEntities.tt">
+    <Content Include="DataObjects\DogoEntitiesModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DoGoEntities.edmx</DependentUpon>
-      <LastGenOutput>DoGoEntities.cs</LastGenOutput>
+      <DependentUpon>DogoEntitiesModel.edmx</DependentUpon>
+      <LastGenOutput>DogoEntitiesModel.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -336,6 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -358,14 +350,14 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="DataObjects\DoGoEntities.edmx">
+    <EntityDeploy Include="DataObjects\DogoEntitiesModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DoGoEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>DogoEntitiesModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataObjects\DoGoEntities.edmx.diagram">
-      <DependentUpon>DoGoEntities.edmx</DependentUpon>
+    <Content Include="DataObjects\DogoEntitiesModel.edmx.diagram">
+      <DependentUpon>DogoEntitiesModel.edmx</DependentUpon>
     </Content>
   </ItemGroup>
   <PropertyGroup>

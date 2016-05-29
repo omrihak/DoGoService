@@ -14,12 +14,9 @@ namespace DoGoService.DataObjects
     
     public partial class UserRequest
     {
-        public int id { get; set; }
-        public Nullable<int> requestingUserId { get; set; }
-        public Nullable<int> requestedUserId { get; set; }
-        public string status { get; set; }
-    
-        public virtual User requestingUser { get; set; }
-        public virtual User requestedUser { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> RequestingUserId { get; set; }
+        public Nullable<int> RequestedUserId { get; set; }
+        public string Status { get; set; }
     }
 }

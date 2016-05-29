@@ -12,28 +12,25 @@ namespace DoGoService.DataObjects
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class DogWalker
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
-        {
-            this.availabilityTimes = new HashSet<AvailabilityTime>();
-        }
-    
         public int id { get; set; }
-        public string address { get; set; }
         public string userName { get; set; }
         public string password { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string phoneNumber { get; set; }
+        public string address { get; set; }
         public string city { get; set; }
-        public bool isWalker { get; set; }
-        public int dogId { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AvailabilityTime> availabilityTimes { get; set; }
-        public virtual Walker walker { get; set; }
-        public virtual Dog dog { get; set; }
+        public bool isComfortable6To8 { get; set; }
+        public bool isComfortable8To10 { get; set; }
+        public bool isComfortable10To12 { get; set; }
+        public bool isComfortable12To14 { get; set; }
+        public bool isComfortable14To16 { get; set; }
+        public bool isComfortable16To18 { get; set; }
+        public bool isComfortable18To20 { get; set; }
+        public bool isComfortable20To22 { get; set; }
+        public int age { get; set; }
+        public int priceForHour { get; set; }
     }
 }

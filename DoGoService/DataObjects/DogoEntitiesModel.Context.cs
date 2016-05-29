@@ -13,10 +13,10 @@ namespace DoGoService.DataObjects
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DogoDbEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public DogoDbEntities()
-            : base("name=DogoDbEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -25,11 +25,10 @@ namespace DoGoService.DataObjects
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AvailabilityTime> AvailabilityTimes { get; set; }
-        public virtual DbSet<Dog> Dogs { get; set; }
-        public virtual DbSet<Trip> Trips { get; set; }
         public virtual DbSet<UserRequest> UserRequests { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Walker> Walkers { get; set; }
+        public virtual DbSet<DogOwner> DogOwners { get; set; }
+        public virtual DbSet<Dog> Dogs { get; set; }
+        public virtual DbSet<DogWalker> DogWalkers { get; set; }
+        public virtual DbSet<Trip> Trips { get; set; }
     }
 }
