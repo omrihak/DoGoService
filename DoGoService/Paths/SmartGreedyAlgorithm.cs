@@ -101,10 +101,14 @@ namespace DoGoService.Paths
                     }
                 }
 
-                var missionType = minLink.DestWaypoint.IsReturnWaypoint ? NodeAction.WalkReturn : NodeAction.WalkPickup;
-                trail.Enqueue(new PathNode(minLink.DestWaypoint.Address, minLink.RealDuration, missionType));
+                var missionType = minLink.DestWaypoint.IsReturnWaypoint ? NodeAction.Return : NodeAction.Pickup;
+                if (minLink.RealDuration > 0)
+                {
+                    trail.Enqueue(new PathNode(minLink.DestWaypoint.Address, minLink.RealDuration, NodeAction.Walk));
+                }
+                trail.Enqueue(new PathNode(minLink.DestWaypoint.Address, 0, missionType));
 
-                if(!minLink.DestWaypoint.IsReturnWaypoint)
+                if (!minLink.DestWaypoint.IsReturnWaypoint)
                 {
                     var latestStartLocal = startTime + (currentWalk.LatestPickup - GlobalTime);
                     if (latestStart > latestStartLocal)

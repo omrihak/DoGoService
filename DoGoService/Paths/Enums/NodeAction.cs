@@ -8,8 +8,8 @@ namespace DoGoService.Paths.Enums
 {
     public enum NodeAction
     {
-        WalkPickup = 1,
-        WalkReturn,
+        Pickup = 1,
+        Return,
         Walk,
         Wait,
         Start
