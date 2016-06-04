@@ -9,6 +9,6 @@ namespace DoGoService.Paths
     public class WalkRequest
     {
         public List<DogWalk> DogWalks { get; set; }
-        public string StartingLocation { get; set; }
+        public int OwnerId { get; set; }
     }
 }

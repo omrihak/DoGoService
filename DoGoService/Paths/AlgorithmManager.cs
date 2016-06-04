@@ -1,4 +1,5 @@
-﻿using DoGoService.Paths.Models;
+﻿using DoGoService.DataObjects;
+using DoGoService.Paths.Models;
 using Google.Maps;
 using Google.Maps.DistanceMatrix;
 using System;
@@ -13,51 +14,148 @@ namespace DoGoService.Paths
 {
     public class AlgorithmManager
     {
-        //private static DogoDbEntities db;
+        private static DogoDbEntitiesConnection db;
 
         public static void init()
         {
-            //if (db == null)
-            //{
-            //    //db = new DogoDbEntities();
-            //    GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyATaHv7YbpgtLoWL43P8hDjrcH30H8gyNI"));
-            //}
+            if (db == null)
+            {
+                db = new DogoDbEntitiesConnection();
+                GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyATaHv7YbpgtLoWL43P8hDjrcH30H8gyNI"));
+            }
         }
 
-        public static WalkerPath DoAlgorithm(string homeLocation, List<DogWalk> walks)
+        public static WalkerPath DoAlgorithm(int walkerID, List<DogWalk> walks)
         {
-            //init();
-            //var dogWalkDetails = new List<DogWalkDetails>();
-            //var dogUserIds = walks.Select(walk => walk.UserId);
+            init();
+            var homeLocation = db.DogWalkers.First(walker => walker.id == walkerID).address;
+            var dogWalkDetails = new List<DogWalkDetails>();
+            var dogUserIds = walks.Select(walk => walk.UserId);
+            var usersWithDogs = db.DogOwners.Where(dog => dogUserIds.Contains(dog.id));
+            walks.ForEach(walk =>
+            {
+                var userToAdd = usersWithDogs.First(user => user.id == walk.UserId);
+                var times = getEarliestAndLatestPickup(userToAdd);
+                dogWalkDetails.Add(new DogWalkDetails()
+                {
+                    Address = userToAdd.address + " " + userToAdd.city,
+                    EarliestPickup = times.Item1,
+                    LatestPickup = times.Item2,
+                    TimeOfWalk = walk.Duration * 60
+                });
+            });
 
-            //var availabilityTimes = (from av in db.AvailabilityTimes
-            //                         where dogUserIds.Contains(av.userId)
-            //                         select av).ToList();
-            //var usersWithDogs = db.Users.Where(dog => dogUserIds.Contains(dog.id));
-            //walks.ForEach(walk =>
-            //{
-            //    var avTimes = availabilityTimes.Where(t => t.userId == walk.UserId).ToList();
-            //    avTimes.Sort((a, b) => a.startTime.CompareTo(b.startTime));
-            //    var earliestPickup = avTimes.First().startTime;
-            //    avTimes.Sort((a, b) => a.endTime.CompareTo(b.endTime));
-            //    var latestPickup = avTimes.Last().endTime;
-            //    var userToAdd = usersWithDogs.First(user => user.id == walk.UserId);
+            List<WalkerPathLink> graphLinks;
+            DogoWaypoint dogoHome;
+            List<DogoWaypoint> graphNodes;
+            GetAlgorithmData(homeLocation, dogWalkDetails, out graphNodes, out graphLinks, out dogoHome);
+            return new SmartGreedyAlgorithm().CalculatePath(dogoHome, graphNodes, dogWalkDetails, graphLinks);
+        }
 
-            //    dogWalkDetails.Add(new DogWalkDetails()
-            //    {
-            //        Address = userToAdd.address + " " + userToAdd.city,
-            //        EarliestPickup = earliestPickup,
-            //        LatestPickup = latestPickup,
-            //        TimeOfWalk = walk.Duration * 60
-            //    });
-            //});
 
-            //List<WalkerPathLink> graphLinks;
-            //DogoWaypoint dogoHome;
-            //List<DogoWaypoint> graphNodes;
-            //GetAlgorithmData(homeLocation, dogWalkDetails, out graphNodes, out graphLinks, out dogoHome);
-            //return new SmartGreedyAlgorithm().CalculatePath(dogoHome, graphNodes, dogWalkDetails, graphLinks);
-            return null;
+        public static Tuple<TimeSpan,TimeSpan> getEarliestAndLatestPickup(DogOwner dogOwner)
+        {
+            TimeSpan earliest = TimeSpan.MaxValue;
+            TimeSpan latest = TimeSpan.MinValue;
+
+            if (dogOwner.isComfortable6To8)
+            {
+                earliest = new TimeSpan(6, 0, 0);
+                latest = new TimeSpan(8, 0, 0);
+            }
+            if (dogOwner.isComfortable8To10)
+            {
+                var localEarliest = new TimeSpan(8, 0, 0);
+                if (localEarliest < earliest)
+                {
+                    earliest = localEarliest;
+                }
+                var localLatest = new TimeSpan(10, 0, 0);
+                if (localLatest > latest)
+                {
+                    latest = localLatest;
+                }
+            }
+            if (dogOwner.isComfortable10To12)
+            {
+                var localEarliest = new TimeSpan(10, 0, 0);
+                if (localEarliest < earliest)
+                {
+                    earliest = localEarliest;
+                }
+                var localLatest = new TimeSpan(12, 0, 0);
+                if (localLatest > latest)
+                {
+                    latest = localLatest;
+                }
+            }
+            if (dogOwner.isComfortable12To14)
+            {
+                var localEarliest = new TimeSpan(12, 0, 0);
+                if (localEarliest < earliest)
+                {
+                    earliest = localEarliest;
+                }
+                var localLatest = new TimeSpan(14, 0, 0);
+                if (localLatest > latest)
+                {
+                    latest = localLatest;
+                }
+            }
+            if (dogOwner.isComfortable14To16)
+            {
+                var localEarliest = new TimeSpan(14, 0, 0);
+                if (localEarliest < earliest)
+                {
+                    earliest = localEarliest;
+                }
+                var localLatest = new TimeSpan(16, 0, 0);
+                if (localLatest > latest)
+                {
+                    latest = localLatest;
+                }
+            }
+            if (dogOwner.isComfortable16To18)
+            {
+                var localEarliest = new TimeSpan(16, 0, 0);
+                if (localEarliest < earliest)
+                {
+                    earliest = localEarliest;
+                }
+                var localLatest = new TimeSpan(18, 0, 0);
+                if (localLatest > latest)
+                {
+                    latest = localLatest;
+                }
+            }
+            if (dogOwner.isComfortable18To20)
+            {
+                var localEarliest = new TimeSpan(18, 0, 0);
+                if (localEarliest < earliest)
+                {
+                    earliest = localEarliest;
+                }
+                var localLatest = new TimeSpan(20, 0, 0);
+                if (localLatest > latest)
+                {
+                    latest = localLatest;
+                }
+            }
+            if (dogOwner.isComfortable20To22)
+            {
+                var localEarliest = new TimeSpan(20, 0, 0);
+                if (localEarliest < earliest)
+                {
+                    earliest = localEarliest;
+                }
+                var localLatest = new TimeSpan(22, 0, 0);
+                if (localLatest > latest)
+                {
+                    latest = localLatest;
+                }
+            }
+
+            return new Tuple<TimeSpan, TimeSpan>(earliest, latest);
         }
 
         public static void GetAlgorithmData(string homeLocation, List<DogWalkDetails> dogWalks, out List<DogoWaypoint> graphNodes, out List<WalkerPathLink> graphLinks, out DogoWaypoint dogoHome)

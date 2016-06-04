@@ -694,3 +694,7 @@ C:\Users\user\Documents\DoGoService\DoGoService\bin\zh-Hant\System.Spatial.resou
 C:\Users\user\Documents\DoGoService\DoGoService\obj\Debug\DoGoService.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\DoGoService\DoGoService\obj\Debug\DoGoService.dll
 C:\Users\user\Documents\DoGoService\DoGoService\obj\Debug\DoGoService.pdb
+C:\DoGoService\DoGoService\bin\Parse.dll
+C:\DoGoService\DoGoService\bin\Parse.NetFx45.dll
+C:\DoGoService\DoGoService\bin\Parse.xml
+C:\DoGoService\DoGoService\bin\Parse.NetFx45.xml

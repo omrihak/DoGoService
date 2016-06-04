@@ -26,6 +26,9 @@ namespace DoGoService.Paths
 
             DoRecursive(dogoHome, graphNodes, dogWalkDetails, graphLinks);
 
+
+            var lastLink = graphLinks.First(link => link.DestWaypoint.Address == dogoHome.Address && link.SourceWaypoint.Address == trail.Last().Waypoint);
+            trail.Enqueue(new PathNode(dogoHome.Address, lastLink.Duration, NodeAction.Walk));
             return new WalkerPath() { Path = trail, StartTime = startTime };
         }
 

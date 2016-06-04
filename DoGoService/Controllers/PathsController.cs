@@ -15,7 +15,7 @@ namespace DoGoService.Controllers
         [ResponseType(typeof(WalkerPath))]
         public IHttpActionResult PostPath(WalkRequest request)
         {
-            return Ok(AlgorithmManager.DoAlgorithm(request.StartingLocation, request.DogWalks));
+            return Ok(AlgorithmManager.DoAlgorithm(request.OwnerId, request.DogWalks));
         }
     }
 }
