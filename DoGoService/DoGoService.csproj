@@ -296,10 +296,12 @@
     <Compile Include="DataObjects\UserRequest.cs">
       <DependentUpon>DoGoModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DogOwner.cs" />
+    <Compile Include="Models\DogWalker.cs" />
     <Compile Include="Paths\Models\WalkerPath.cs" />
     <Compile Include="Paths\Enums\NodeAction.cs" />
     <Compile Include="Paths\Models\WalkRequest.cs" />
-    <Compile Include="Paths\AlgorithmManager.cs" />
+    <Compile Include="Paths\PathsCalculator.cs" />
     <Compile Include="Paths\Models\PathNode.cs" />
     <Compile Include="Paths\Models\DogoWaypoint.cs" />
     <Compile Include="Paths\Models\DogWalk.cs" />
@@ -314,6 +316,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+    <Compile Include="Utils\ParseAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataObjects\DoGoModels.Context.tt">

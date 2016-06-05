@@ -1,7 +1,9 @@
-﻿using DoGoService.DataObjects;
+﻿using DoGoService.Models;
 using DoGoService.Paths.Models;
+using DoGoService.Utils;
 using Google.Maps;
 using Google.Maps.DistanceMatrix;
+using Parse;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -12,29 +14,26 @@ using System.Web;
 
 namespace DoGoService.Paths
 {
-    public class AlgorithmManager
+    public class PathsCalculator
     {
-        private static DogoDbEntitiesConnection db;
+        private readonly ParseAdapter _adapter;
 
-        public static void init()
+        public PathsCalculator()
         {
-            if (db == null)
-            {
-                db = new DogoDbEntitiesConnection();
-                GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyATaHv7YbpgtLoWL43P8hDjrcH30H8gyNI"));
-            }
+            GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyATaHv7YbpgtLoWL43P8hDjrcH30H8gyNI"));
+            _adapter = new ParseAdapter();
         }
 
-        public static WalkerPath DoAlgorithm(int walkerID, List<DogWalk> walks)
+        public WalkerPath DoAlgorithm(int walkerID, List<DogWalk> walks)
         {
-            init();
-            var homeLocation = db.DogWalkers.First(walker => walker.id == walkerID).address;
+            var homeLocation = _adapter.GetWalkers().First(walker => walker.id == walkerID).address;
             var dogWalkDetails = new List<DogWalkDetails>();
             var dogUserIds = walks.Select(walk => walk.UserId);
-            var usersWithDogs = db.DogOwners.Where(dog => dogUserIds.Contains(dog.id));
+            var usersWithDogs = _adapter.GetOwners().Where(owner => dogUserIds.Contains(owner.userId));
+
             walks.ForEach(walk =>
             {
-                var userToAdd = usersWithDogs.First(user => user.id == walk.UserId);
+                var userToAdd = usersWithDogs.First(user => user.userId == walk.UserId);
                 var times = getEarliestAndLatestPickup(userToAdd);
                 dogWalkDetails.Add(new DogWalkDetails()
                 {
@@ -53,7 +52,7 @@ namespace DoGoService.Paths
         }
 
 
-        public static Tuple<TimeSpan,TimeSpan> getEarliestAndLatestPickup(DogOwner dogOwner)
+        public Tuple<TimeSpan, TimeSpan> getEarliestAndLatestPickup(DogOwner dogOwner)
         {
             TimeSpan earliest = TimeSpan.MaxValue;
             TimeSpan latest = TimeSpan.MinValue;
@@ -158,7 +157,7 @@ namespace DoGoService.Paths
             return new Tuple<TimeSpan, TimeSpan>(earliest, latest);
         }
 
-        public static void GetAlgorithmData(string homeLocation, List<DogWalkDetails> dogWalks, out List<DogoWaypoint> graphNodes, out List<WalkerPathLink> graphLinks, out DogoWaypoint dogoHome)
+        public void GetAlgorithmData(string homeLocation, List<DogWalkDetails> dogWalks, out List<DogoWaypoint> graphNodes, out List<WalkerPathLink> graphLinks, out DogoWaypoint dogoHome)
         {
             DistanceMatrixService service = new DistanceMatrixService();
             service.BaseUri = new Uri("https://maps.google.com/maps/api/distancematrix/");

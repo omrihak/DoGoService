@@ -11,11 +11,18 @@ namespace DoGoService.Controllers
     [AllowAnonymous]
     public class PathsController : ApiController
     {
+        private readonly PathsCalculator _calculator;
+
+        public PathsController()
+        {
+            _calculator = new PathsCalculator();
+        }
+
         // POST: api/Paths
         [ResponseType(typeof(WalkerPath))]
         public IHttpActionResult PostPath(WalkRequest request)
         {
-            return Ok(AlgorithmManager.DoAlgorithm(request.OwnerId, request.DogWalks));
+            return Ok(_calculator.DoAlgorithm(request.OwnerId, request.DogWalks));
         }
     }
 }
