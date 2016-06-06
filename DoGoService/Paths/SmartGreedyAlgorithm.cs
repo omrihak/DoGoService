@@ -91,22 +91,22 @@ namespace DoGoService.Paths
                             var waitTime = startTime + currentWalk.EarliestPickup - GlobalTime - latestStart;
                             GlobalTime += latestStart - startTime;
                             startTime = latestStart;
-                            trail.Enqueue(new PathNode((int)waitTime.TotalSeconds,NodeAction.Wait));
+                            trail.Enqueue(new PathNode(minLink.SourceWaypoint.Address, (int)waitTime.TotalSeconds, NodeAction.Wait) { UserId = currentWalk.UserId});
                             GlobalTime = GlobalTime.Add(waitTime);
                         }
                     }
                     else
                     {
-                        trail.Enqueue(new PathNode(minLink.Duration - minLink.RealDuration, NodeAction.Wait));
+                        trail.Enqueue(new PathNode(minLink.DestWaypoint.Address, minLink.Duration - minLink.RealDuration, NodeAction.Wait) { UserId = currentWalk.UserId });
                     }
                 }
 
                 var missionType = minLink.DestWaypoint.IsReturnWaypoint ? NodeAction.Return : NodeAction.Pickup;
                 if (minLink.RealDuration > 0)
                 {
-                    trail.Enqueue(new PathNode(minLink.DestWaypoint.Address, minLink.RealDuration, NodeAction.Walk));
+                    trail.Enqueue(new PathNode(minLink.DestWaypoint.Address, minLink.RealDuration, NodeAction.Walk) { UserId = currentWalk.UserId });
                 }
-                trail.Enqueue(new PathNode(minLink.DestWaypoint.Address, 0, missionType));
+                trail.Enqueue(new PathNode(minLink.DestWaypoint.Address, 0, missionType) { UserId = currentWalk.UserId });
 
                 if (!minLink.DestWaypoint.IsReturnWaypoint)
                 {

@@ -12,6 +12,8 @@ namespace DoGoService.Paths.Models
     public class PathNode
     {
         [DataMember]
+        public int UserId { get; set; }
+        [DataMember]
         public string Waypoint { get; set; }
         [DataMember]
         public int Duration { get; set; }

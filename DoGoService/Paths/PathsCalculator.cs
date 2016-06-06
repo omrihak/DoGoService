@@ -37,6 +37,7 @@ namespace DoGoService.Paths
                 var times = getEarliestAndLatestPickup(userToAdd);
                 dogWalkDetails.Add(new DogWalkDetails()
                 {
+                    UserId = userToAdd.userId,
                     Address = userToAdd.address + " " + userToAdd.city,
                     EarliestPickup = times.Item1,
                     LatestPickup = times.Item2,
